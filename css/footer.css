@@ -1,0 +1,17 @@
+    .alinear{
+     display: inline-block;
+     width: 70%;
+     margin-top: 3px;
+     margin-bottom: 3px;
+     margin-left: 3px;
+     margin-right: 3px;
+     border-radius: 5px;  
+    }
+.index-social {
+    background-color:#930909;
+    color:#ffffff;
+}
+
+.index-link{
+    background-color:#3b3636;
+}
