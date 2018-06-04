@@ -19,7 +19,7 @@
     <link href="css/card.css" rel="stylesheet">
       
     <?php include('conn.php');
-     $query=mysqli_query($conn,"select * from product where categoryid = 2 order by product_name");  
+     $query=mysqli_query($conn,"select * from product where categoryid = 2 order by product_price");  
     $nro_reg=mysqli_num_rows($query); 
     $Total = $nro_reg;
     
@@ -34,7 +34,7 @@
         $inicio=0;
       
       
-       $query=mysqli_query($conn,"select * from product where categoryid = 2 order by product_name limit $inicio,$reg_por_pagina");  
+       $query=mysqli_query($conn,"select * from product where categoryid = 2 order by product_price limit $inicio,$reg_por_pagina");  
       
       $can_paginas=ceil($nro_reg / $reg_por_pagina);
       ?>
@@ -124,7 +124,7 @@
       <div align="center">
       <?php
           if($nro_pagina>1)
-              echo "<a href='cpu-intel.php?num=".($nro_pagina-1)."'> Anterior ></a> ";
+              echo "<a style='background-color:#262424; border-radius:5px;' href='cpu-intel.php?num=".($nro_pagina-1)."'> Anterior ></a> ";
               
        for ($i=1; $i<=$can_paginas; $i++){
            if ($i==$nro_pagina)
@@ -134,7 +134,7 @@
        } 
           
           if($nro_pagina<$can_paginas)
-               echo "<a href='cpu-intel.php?num=".($nro_pagina+1)."'> Siguiente ></a> ";
+               echo "<a style='background-color:#262424; border-radius:5px;' href='cpu-intel.php?num=".($nro_pagina+1)."'> Siguiente ></a> ";
           
        ?>
       </div>
