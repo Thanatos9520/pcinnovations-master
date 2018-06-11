@@ -21,16 +21,7 @@
     <link href="css/ihover.css" rel="stylesheet">
     <link href="css/hover.css" rel="stylesheet">
      
-     <style>
-      
-         .card-img-top {
-  width: 100%;
-  height: 220px !important; //esta es la parte importante para que todas tus card-img tengan la misma medida sin importar el tamaño de la imagen
-  border-top-left-radius: calc(0.25rem - 1px);
-  border-top-right-radius: calc(0.25rem - 1px);
-}
-         
-      </style>
+
       
     <?php include('conn.php');
      $query=mysqli_query($conn,"select * from product where categoryid = 1 order by product_name");  
@@ -80,7 +71,7 @@
 
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.html">Inicio</a>
+          <a href="index.php" style="color:black">Inicio</a>
         </li>
         <li class="breadcrumb-item active">Motherboard</li>
       </ol>
@@ -110,12 +101,12 @@
  
  
     <!-- colored -->
-    <div class="ih-item square colored effect4" style="height:250px;"><a id="enviar">
-        <div class="img"><img src="POS/<?php if (empty($photo)){echo "upload/noimage.jpg";}else{echo $photo;} ?>" alt="img"></div>
+    <div class="ih-item square colored effect4" style="height:200px; "><a id="enviar">
+        <div class="img"><img src="POS/<?php if (empty($photo)){echo "upload/noimage.jpg";}else{echo $photo;} ?>" alt="img" style="width:200px;"></div>
         <div class="mask1"></div>
         <div class="mask2"></div>
         <div class="info">  
-          <h3><?php echo $name; ?></h3>
+          <h3 style="text-align:left"><?php echo $name; ?></h3>
           <h4>₡ <?php echo $price; ?></h4>
              <form action="details.php" method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $id; ?>" /><input name="Detalles" type="submit" value="Detalles" class="btn btn-info" /></form>
         </div></a></div>
@@ -138,10 +129,10 @@
 </div>
         <div style="height: 50px;"></div>
       <!-- Pagination -->
-      <div align="center">
+           <div align="center">
       <?php
           if($nro_pagina>1)
-              echo "<a href='mobo.php?num=".($nro_pagina-1)."'> Anterior ></a> ";
+              echo "<a style='background-color:#262424; border-radius:5px;' href='mobo.php?num=".($nro_pagina-1)."'> Anterior ></a> ";
               
        for ($i=1; $i<=$can_paginas; $i++){
            if ($i==$nro_pagina)
@@ -151,7 +142,7 @@
        } 
           
           if($nro_pagina<$can_paginas)
-               echo "<a href='mobo.php?num=".($nro_pagina+1)."'> Siguiente ></a> ";
+               echo "<a style='background-color:#262424; border-radius:5px;' href='mobo.php?num=".($nro_pagina+1)."'> Siguiente ></a> ";
           
        ?>
       </div>

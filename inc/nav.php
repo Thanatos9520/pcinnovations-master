@@ -85,7 +85,7 @@
                     <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">COMPUTADORAS</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="kits.php"><i class="fa fa-gamepad fa-x3"></i> GAMING</a>
+                        <a class="dropdown-item" href="pcgamer.php"><i class="fa fa-gamepad fa-x3"></i> GAMING</a>
                              <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="kits.php"><i class="fa fa-gears fa-x3"></i> COMBO / KITS</a>
                              <div class="dropdown-divider"></div>
@@ -113,6 +113,8 @@
                         <a class="dropdown-item" href="cooler.php"><i class="fa fa-snowflake-o fa-x3"></i> ENFRIAMIENTO</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="case.php"><i class="fa fa-cube fa-x3"></i> CASES</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="fans.php"><i class="fa fa-cube fa-x3"></i> Fans</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#"><i class="fa fa-microchip fa-x3"></i> PROCESADORES</a>
             <ul class="dropdown-menu">

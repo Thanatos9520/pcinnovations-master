@@ -87,13 +87,13 @@
 			if($inc == 1) echo "<div class='row'>";  
 			
 			?>
-				<div class="col-lg-3">
+				<div class="col-lg-5">
                     
+
+ 
 <div class="row">
- 
- 
     <!-- colored -->
-    <div class="ih-item square colored effect4" style="height:250px;"><a id="enviar">
+    <div class="ih-item square colored effect4" style="width:300px; height:250px; display:inline-block; margin:1em"><a id="enviar">
         <div class="img"><img src="POS/<?php if (empty($photo)){echo "upload/noimage.jpg";}else{echo $photo;} ?>" alt="img"></div>
         <div class="mask1"></div>
         <div class="mask2"></div>
@@ -105,8 +105,8 @@
     <!-- end colored -->
  
 
-    
-  </div>
+</div>    
+
             
 				</div>
 			<?php
@@ -121,10 +121,10 @@
 </div>
         <div style="height: 50px;"></div>
       <!-- Pagination -->
-      <div align="center">
+           <div align="center">
       <?php
           if($nro_pagina>1)
-              echo "<a href='pcgamer.php?num=".($nro_pagina-1)."'> Anterior ></a> ";
+              echo "<a style='background-color:#262424; border-radius:5px;' href='pcgamer.php?num=".($nro_pagina-1)."'> Anterior ></a> ";
               
        for ($i=1; $i<=$can_paginas; $i++){
            if ($i==$nro_pagina)
@@ -134,7 +134,7 @@
        } 
           
           if($nro_pagina<$can_paginas)
-               echo "<a href='pcgamer.php?num=".($nro_pagina+1)."'> Siguiente ></a> ";
+               echo "<a style='background-color:#262424; border-radius:5px;' href='pcgamer.php?num=".($nro_pagina+1)."'> Siguiente ></a> ";
           
        ?>
       </div>
