@@ -41,7 +41,7 @@
         if (isset($_POST['id_txt'])){
     $id = $_POST['id_txt'];
     $nro_reg=$_POST['id_txt'];      
-    $sql = "select * from product as p where p.productid = \"$id\"";
+    $sql = "select distinct * from product as p where p.productid = \"$id\"";
     $result = mysqli_query($conn, $sql);
                                 }
 
@@ -73,7 +73,7 @@
        <div class="bs-example">
        	<div id="carousel-example-captions" class="carousel slide" data-ride="carousel">
        	<?php 
-       	$sql2 = "select * from carousel as c where c.productid = \"$_POST[id_txt]\"";
+       	$sql2 = "select distinct * from carousel as c where c.productid = \"$_POST[id_txt]\"";
     	$result2 = mysqli_query($conn, $sql2);
     	if ($rs = mysqli_fetch_array($result2)) {
     		echo '<img style=" height: 300px; width: 350px;" src=POS/'.$rs["1"].' class="big-img">';}
