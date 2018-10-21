@@ -34,7 +34,7 @@
         $inicio=0;
       
       
-       $query=mysqli_query($conn,"select * from product where categoryid = 10 order by product_name limit $inicio,$reg_por_pagina");  
+       $query=mysqli_query($conn,"select * from product where categoryid = 10 order by product_price limit $inicio,$reg_por_pagina");  
       
       $can_paginas=ceil($nro_reg / $reg_por_pagina);
       ?>

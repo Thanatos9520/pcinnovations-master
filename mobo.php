@@ -10,7 +10,7 @@
     <meta name="author" content="">
       
       <link href="vendor/bootstrap/css/footer.css" rel="stylesheet">
-    <title>INNOVUS</title>
+    <title>PCINNOVATIONS</title>
     <?php include './inc/link.php'; ?>
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -40,7 +40,7 @@
         $inicio=0;
       
       
-       $query=mysqli_query($conn,"select * from product where categoryid = 1 order by product_name limit $inicio,$reg_por_pagina");  
+       $query=mysqli_query($conn,"select * from product where categoryid = 1 order by product_price limit $inicio,$reg_por_pagina");  
       
       $can_paginas=ceil($nro_reg / $reg_por_pagina);
       ?>
