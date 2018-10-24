@@ -77,7 +77,7 @@
        	$sql2 = "select distinct * from carousel as c where c.productid = \"$_POST[id_txt]\"";
     	$result2 = mysqli_query($conn, $sql2);
     	if ($rs = mysqli_fetch_array($result2)) {
-    		echo '<img style=" height: 300px; width: 350px;" src=POS/'.$rs["1"].' class="big-img">';}
+    		echo '<img style=" height: 300px; width: 80%;" src=POS/'.$rs["1"].' class="big-img">';}
        	?>
        </div>
        </div>
