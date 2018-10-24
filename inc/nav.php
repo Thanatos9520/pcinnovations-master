@@ -136,6 +136,7 @@
                     COMPONENTES
                     </a>
 
+<<<<<<< HEAD
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="mobo.php">
                              TARJETA MADRE
@@ -148,6 +149,26 @@
                         <a class="dropdown-item" href="gpu.php">
                              TARJETAS DE VIDEO
                         </a>
+=======
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li class="nav-item">                        
+                            <a class="dropdown-item" href="mobo.php">
+                                <i class="fa fa-desktop fa-x3"></i> TARJETA MADRE
+                            </a>
+                        </li>
+                        <div class="dropdown-divider"></div>
+                        <li class="nav-item">
+                            <a class="dropdown-item" href="ram.php">
+                                <i class="fa fa-microchip fa-x3"></i> MEMORIA RAM
+                            </a>
+                        </li>
+                        <div class="dropdown-divider"></div>
+                        <li class="nav-item">
+                            <a class="dropdown-item" href="gpu.php">
+                                <i class="fa fa-film fa-x3"></i> TARJETAS DE VIDEO
+                            </a>
+                        </li>
+>>>>>>> origin/Logan
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="psu.php">
                              FUENTES DE PODER
@@ -173,20 +194,26 @@
                             Fans
                         </a>
                         <div class="dropdown-divider"></div>
+<<<<<<< HEAD
                         <a class="dropdown-submenu">
                             <a class="dropdown-item dropdown-toggle" href="#">
                              PROCESADORES
+=======
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" href="#">
+                                <i class="fa fa-microchip fa-x3"></i> PROCESADORES
+>>>>>>> origin/Logan
                             </a>
-                            <ul class="dropdown-menu">
-                                <li>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li class="nav-item">
                                     <a class="dropdown-item" href="cpu-intel.php">INTEL</a>
                                 </li>
-                                <li>
+                                <li class="nav-item">
                                     <a class="dropdown-item" href="cpu-amd.php">AMD</a>
                                 </li>
                             </ul>
-                         </a>
-                    </div>
+                         </li>
+                    </ul>
                  </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PERIFÉRICOS</a>
@@ -213,3 +240,19 @@
     </div>
 </nav>
     <script src="js/eskju.jquery.scrollflow.min.js"></script>
+<script>
+    $('.dropdown-menu a.dropdown-toggle').on('click', function(e) { // desencadena el evento sobre estas clases
+  if (!$(this).next().hasClass('show')) { // si es mientras no sea apunte a un siguiente 
+    $(this).parents('.dropdown-menu').first().find('.show').removeClass("show"); 
+  }
+  var $subMenu = $(this).next(".dropdown-menu"); // hacemos la referencia al sisguiente
+  $subMenu.toggleClass('show'); // mostramos el sigiente
+
+
+  $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+    $('.dropdown-submenu .show').removeClass("show");
+  });
+
+  return false;
+});
+</script>
