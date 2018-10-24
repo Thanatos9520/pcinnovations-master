@@ -68,7 +68,7 @@
       </h1>
           <div class="row class="animated bounceInLeft>
         <div class="col-lg-12">
-            <img src="img/Banner_Productos/ram.jpg" style="width:70%;">
+            <img src="img/Banner_Productos/ram.jpg" style="width:100%;">
         </div>
         </div>
     <div style="height: 50px;"></div>
@@ -110,7 +110,7 @@
         <div class="info">  
           <h3 style="text-align:left;"><?php echo $name; ?></h3>
           <h4>₡ <?php echo $price; ?></h4>
-             <form action="details.php" method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $id; ?>" /><input name="Detalles" type="submit" value="Detalles" class="btn btn-info" /></form>
+             <form action="details.php?id=<?php echo $id; ?>" method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $id; ?>" /><input name="Detalles" type="submit" value="Detalles" class="btn btn-info" /></form>
         </div></a></div>
     <!-- end colored -->
  
@@ -131,20 +131,20 @@
 </div>
         <div style="height: 50px;"></div>
       <!-- Pagination -->
-      <div align="center">
+           <div align="center">
       <?php
           if($nro_pagina>1)
-              echo "<a href='cpu.php?num=".($nro_pagina-1)."'> Anterior ></a> ";
+              echo "<a style='background-color:#262424; border-radius:5px;' href='ram.php?num=".($nro_pagina-1)."'> Anterior ></a> ";
               
        for ($i=1; $i<=$can_paginas; $i++){
            if ($i==$nro_pagina)
                echo $i." ";
            else 
-               echo "<a href='ram.php?num=$i'>$i</a> ";
+               echo "<a style='color:black;' href='ram.php?num=$i'>$i</a> ";
        } 
           
           if($nro_pagina<$can_paginas)
-               echo "<a href='ram.php?num=".($nro_pagina+1)."'> Siguiente ></a> ";
+               echo "<a style='background-color:#262424; border-radius:5px;' href='ram.php?num=".($nro_pagina+1)."'> Siguiente ></a> ";
           
        ?>
       </div>
