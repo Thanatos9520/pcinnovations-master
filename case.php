@@ -34,7 +34,7 @@
         $inicio=0;
       
       
-       $query=mysqli_query($conn,"select * from product where categoryid = 10 order by product_name limit $inicio,$reg_por_pagina");  
+       $query=mysqli_query($conn,"select * from product where categoryid = 10 order by product_price limit $inicio,$reg_por_pagina");  
       
       $can_paginas=ceil($nro_reg / $reg_por_pagina);
       ?>
@@ -101,7 +101,7 @@
         <div class="info">  
           <h3 style="text-align:left"><?php echo $name; ?></h3>
           <h4>₡ <?php echo $price; ?></h4>
-             <form action="details.php" method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $id; ?>" /><input name="Detalles" type="submit" value="Detalles" class="btn btn-info" /></form>
+             <form action="details.php?id=<?php echo $id; ?>" method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $id; ?>" /><input name="Detalles" type="submit" value="Detalles" class="btn btn-info" /></form>
         </div></a></div>
     <!-- end colored -->
  
@@ -122,20 +122,20 @@
 </div>
         <div style="height: 50px;"></div>
       <!-- Pagination -->
-      <div align="center">
+           <div align="center">
       <?php
           if($nro_pagina>1)
-              echo "<a href='case.php?num=".($nro_pagina-1)."'> Anterior ></a> ";
+              echo "<a style='background-color:#262424; border-radius:5px;' href='case.php?num=".($nro_pagina-1)."'> Anterior ></a> ";
               
        for ($i=1; $i<=$can_paginas; $i++){
            if ($i==$nro_pagina)
                echo $i." ";
            else 
-               echo "<a href='case.php?num=$i'>$i</a> ";
+               echo "<a style='color:black;' href='case.php?num=$i'>$i</a> ";
        } 
           
           if($nro_pagina<$can_paginas)
-               echo "<a href='case.php?num=".($nro_pagina+1)."'> Siguiente ></a> ";
+               echo "<a style='background-color:#262424; border-radius:5px;' href='case.php?num=".($nro_pagina+1)."'> Siguiente ></a> ";
           
        ?>
       </div>

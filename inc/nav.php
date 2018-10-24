@@ -114,7 +114,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="case.php"><i class="fa fa-cube fa-x3"></i> CASES</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="fans.php"><i class="fa fa-cube fa-x3"></i> Fans</a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-cube fa-x3"></i> Fans</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#"><i class="fa fa-microchip fa-x3"></i> PROCESADORES</a>
             <ul class="dropdown-menu">
@@ -122,6 +122,20 @@
               <li><a class="dropdown-item" href="cpu-amd.php">AMD</a></li>
             </ul>
                         </a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PERIFÉRICOS</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="teclado.php"><i></i>TECLADOS</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="mouse.php"><i></i> MOUSE</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="mouse-teclado.php"><i></i> COMBO TECLADO Y MOUSE</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="headset.php"><i></i> HEADSET</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="mousepad.php"><i></i> MOUSEPAD</a>
                     </div>
                 </li>
                  <li class="nav-item">

@@ -10,7 +10,7 @@
     <meta name="author" content="">
       
       <link href="vendor/bootstrap/css/footer.css" rel="stylesheet">
-    <title>INNOVUS</title>
+    <title>PCINNOVATIONS</title>
     <?php include './inc/link.php'; ?>
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -40,7 +40,7 @@
         $inicio=0;
       
       
-       $query=mysqli_query($conn,"select * from product where categoryid = 1 order by product_name limit $inicio,$reg_por_pagina");  
+       $query=mysqli_query($conn,"select * from product where categoryid = 1 order by product_price limit $inicio,$reg_por_pagina");  
       
       $can_paginas=ceil($nro_reg / $reg_por_pagina);
       ?>
@@ -59,11 +59,15 @@
     
 <div class="container">
 <div style="height: 50px;"></div>
-    <h1 style=" ">TARJETA MADRE</h1>
+      <div class="row">
+        <div class="col-lg-5">
+           <h1 style=" border-style: double; border-color:red; ">TARJETA MADRE</h1>
+        </div>
+        </div>
       
        <div class="row">
         <div class="col-lg-12">
-            <img src="img/Banner_Productos/desiganre.jpg" style="width: 80%;">
+            <img src="img/Banner_Productos/desiganre.jpg" style="width: 100%;">
         </div>
         </div>
 <div style="height: 50px;"></div>
@@ -108,7 +112,7 @@
         <div class="info">  
           <h3 style="text-align:left"><?php echo $name; ?></h3>
           <h4>₡ <?php echo $price; ?></h4>
-             <form action="details.php" method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $id; ?>" /><input name="Detalles" type="submit" value="Detalles" class="btn btn-info" /></form>
+             <form action="details.php?id=<?php echo $id; ?>" method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $id; ?>" /><input name="Detalles" type="submit" value="Detalles" class="btn btn-info" /></form>
         </div></a></div>
     <!-- end colored -->
  
@@ -132,13 +136,13 @@
            <div align="center">
       <?php
           if($nro_pagina>1)
-              echo "<a style='background-color:#262424; border-radius:5px;' href='mobo.php?num=".($nro_pagina-1)."'> Anterior ></a> ";
+              echo "<a style='background-color:#262424; border-radius:5px;' href='mobo.php?num=".($nro_pagina-1)."'> Anterior < </a> ";
               
        for ($i=1; $i<=$can_paginas; $i++){
            if ($i==$nro_pagina)
                echo $i." ";
            else 
-               echo "<a href='mobo.php?num=$i'>$i</a> ";
+               echo "<a style='color:black;' href='mobo.php?num=$i'>$i</a> ";
        } 
           
           if($nro_pagina<$can_paginas)
