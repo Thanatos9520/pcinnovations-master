@@ -114,19 +114,19 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="pcgamer.php">
-                            <i class="fa fa-gamepad fa-x3"></i>GAMING
+                            GAMING
                         </a>
                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="kits.php">
-                           <i class="fa fa-gears fa-x3"></i> COMBO / KITS
+                           COMBO / KITS
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="hogar.php">
-                           <i class="fa fa-desktop fa-x3"></i>HOGAR / OFICINA
+                          HOGAR / OFICINA
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="laptops.php">
-                            <i class="fa fa-laptop fa-x3"></i> LAPTOPS
+                         LAPTOPS
                         </a>
                         <div class="dropdown-divider"></div>
                     </div>
@@ -138,44 +138,44 @@
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="mobo.php">
-                            <i class="fa fa-desktop fa-x3"></i> TARJETA MADRE
+                             TARJETA MADRE
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="ram.php">
-                            <i class="fa fa-microchip fa-x3"></i> MEMORIA RAM
+                           MEMORIA RAM
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="gpu.php">
-                            <i class="fa fa-film fa-x3"></i> TARJETAS DE VIDEO
+                             TARJETAS DE VIDEO
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="psu.php">
-                            <i class="fa fa-flash fa-x3"></i> FUENTES DE PODER
+                             FUENTES DE PODER
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="HDD.php">
-                            <i class="fa fa-database fa-x3"></i> DISCOS DUROS
+                             DISCOS DUROS
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="monitor.php">
-                            <i class="fa fa-television fa-x3"></i> MONITORES
+                             MONITORES
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="cooler.php">
-                            <i class="fa fa-snowflake-o fa-x3"></i> ENFRIAMIENTO
+                            ENFRIAMIENTO
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="case.php">
-                            <i class="fa fa-cube fa-x3"></i> CASES
+                            CASES
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="fans.php">
-                            <i class="fa fa-cube fa-x3"></i> Fans
+                        <a class="dropdown-item" href="#">
+                            Fans
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-submenu">
                             <a class="dropdown-item dropdown-toggle" href="#">
-                                <i class="fa fa-microchip fa-x3"></i> PROCESADORES
+                             PROCESADORES
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
