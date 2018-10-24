@@ -114,11 +114,11 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="pcgamer.php">
-                            GAMING
+                          GAMING
                         </a>
                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="kits.php">
-                           COMBO / KITS
+                          COMBO / KITS
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="hogar.php">
@@ -136,73 +136,52 @@
                     COMPONENTES
                     </a>
 
-<<<<<<< HEAD
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="mobo.php">
-                             TARJETA MADRE
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="ram.php">
-                           MEMORIA RAM
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="gpu.php">
-                             TARJETAS DE VIDEO
-                        </a>
-=======
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li class="nav-item">                        
                             <a class="dropdown-item" href="mobo.php">
-                                <i class="fa fa-desktop fa-x3"></i> TARJETA MADRE
+                                 TARJETA MADRE
                             </a>
                         </li>
                         <div class="dropdown-divider"></div>
                         <li class="nav-item">
                             <a class="dropdown-item" href="ram.php">
-                                <i class="fa fa-microchip fa-x3"></i> MEMORIA RAM
+                                 MEMORIA RAM
                             </a>
                         </li>
                         <div class="dropdown-divider"></div>
                         <li class="nav-item">
                             <a class="dropdown-item" href="gpu.php">
-                                <i class="fa fa-film fa-x3"></i> TARJETAS DE VIDEO
+                                 TARJETAS DE VIDEO
                             </a>
                         </li>
->>>>>>> origin/Logan
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="psu.php">
-                             FUENTES DE PODER
+                                 FUENTES DE PODER
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="HDD.php">
-                             DISCOS DUROS
+                                 DISCOS DUROS
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="monitor.php">
-                             MONITORES
+                                 MONITORES
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="cooler.php">
-                            ENFRIAMIENTO
+                                 ENFRIAMIENTO
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="case.php">
-                            CASES
+                                 CASES
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">
-                            Fans
+                                 Fans
                         </a>
                         <div class="dropdown-divider"></div>
-<<<<<<< HEAD
-                        <a class="dropdown-submenu">
-                            <a class="dropdown-item dropdown-toggle" href="#">
-                             PROCESADORES
-=======
                         <li class="dropdown-submenu">
                             <a class="dropdown-item dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" href="#">
                                 <i class="fa fa-microchip fa-x3"></i> PROCESADORES
->>>>>>> origin/Logan
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li class="nav-item">
