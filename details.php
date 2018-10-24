@@ -62,7 +62,7 @@
         }
         ?>
         <br>
-        <div class="col-xs-12"><hr></div>
+        <div class="col-xs-12"></div>
         
         <h8><a href="index.php" style=""> Inicio </a> /<a href="" style=""><?php echo $category_name; ?></a> <a style="color: black"><?php echo $product_name; ?></a></h8>
    
