@@ -63,11 +63,12 @@
         ?>
         <br>
         <div class="col-xs-12"><hr></div>
-        <h1><?php echo $product_name; ?></h1>
-        <h8><a href="index.php" style="color: green"> Home </a> > <a href="" style="color: green"><?php echo $category_name; ?></a> > <a style="color: gray"><?php echo $product_name; ?></a></h8>
+        
+        <h8><a href="index.php" style=""> Inicio </a> /<a href="" style=""><?php echo $category_name; ?></a> <a style="color: black"><?php echo $product_name; ?></a></h8>
    
         <hr>
-    <div class="row">
+        
+    <div class="row d-flex" style="background:white;">
         <div class="col-sm-5">
                          
        <div class="bs-example">
@@ -94,8 +95,8 @@
    		</div>
    		</div>
               
-                <div class="col-sm-4" style="background-color:#ffffff; border:1px solid; border-radius:5px;">
-        <h1 style="color: #de0404">₡<?php echo number_format($price,2); ?></h1>
+                <div class="col-sm-3 ml-auto p-2" style="background-color:#f0f0f0; border:1px solid; border-radius:5px; margin: 30px;">
+        <h3 style="color: black">₡<?php echo number_format($price,2); ?></h3>
         <hr>
         <a style="color: gray"><?php echo $product_name; ?></a>
         <hr>
@@ -174,6 +175,8 @@ $tech1 = str_replace("\n", "<br>", $tech);
   <br>
 </div>
 </div>
+     <br>
+     <br>
       </div>
       </div>    
       
