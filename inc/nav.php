@@ -21,7 +21,7 @@
         <div style="height: 15px;" class="collapse navbar-collapse" id="navbarCollapse1">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <h5 class="nav-item nav-link" href="#" style="color:#ffffff; margin-right:0px;"><i class="fa fa-phone text-white"></i> : 8301-2524</h5>
+                    <h5 class="nav-item nav-link" href="#" style="color:#ffffff; margin-right:0px;"><i class="fa fa-phone text-white"></i> : +506 8301-2524</h5>
                 </li>
                 <li class="nav-item">
                     <a class="nav-item nav-link" href="#" style="color:#fdfdfd;"><i class="fa fa-envelope-o"></i> pcinnovations2020@yahoo.com</a>
@@ -114,15 +114,15 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="pcgamer.php">
-                            <!--<i class="fa fa-gamepad fa-x3"></i>-->GAMING
+                            <i class="fa fa-gamepad fa-x3"></i>GAMING
                         </a>
-                       <!-- <div class="dropdown-divider"></div>-->
+                       <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="kits.php">
-                            <!--<i class="fa fa-gears fa-x3"></i> -->COMBO / KITS
+                           <i class="fa fa-gears fa-x3"></i> COMBO / KITS
                         </a>
-                        <!--<div class="dropdown-divider"></div>-->
+                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="hogar.php">
-                           <!-- <i class="fa fa-desktop fa-x3"></i> -->HOGAR / OFICINA
+                           <i class="fa fa-desktop fa-x3"></i>HOGAR / OFICINA
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="laptops.php">
