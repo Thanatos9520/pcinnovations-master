@@ -77,7 +77,7 @@
        	$sql2 = "select distinct * from carousel as c where c.productid = \"$_POST[id_txt]\"";
     	$result2 = mysqli_query($conn, $sql2);
     	if ($rs = mysqli_fetch_array($result2)) {
-    		echo '<img style=" height: 300px; width: 80%;" src=POS/'.$rs["1"].' class="big-img">';}
+    		echo '<img style=" height: 70%; width: 100%;" src=POS/'.$rs["1"].' class="big-img">';}
        	?>
        </div>
        </div>
@@ -96,7 +96,7 @@
    		</div>
               
                 <div class="col-sm-3 ml-auto p-2" style="background-color:#f0f0f0; border:1px solid; border-radius:5px; margin: 30px;">
-        <h3 style="color: black">₡<?php echo number_format($price,2); ?></h3>
+        <h3 style="color: black">₡<?php echo number_format($price); ?></h3>
         <hr>
         <a style="color: gray"><?php echo $product_name; ?></a>
         <hr>
@@ -109,7 +109,7 @@
     <input id="idp" type="hidden" value="<?php echo $id; ?>" >
     <label for="qty">Qty:</label>
     <input type="number" style="width:80px;height:30x" class="form-control" id="qty" min="0" step="1" value="0" onchange="valid()">
-    <button type="submit" class="btn btn-danger disabled" required style="margin-left:5px;" disabled="true" id="btnCart">Add to Cart</button>
+    <button type="submit" class="btn btn-danger disabled" required style="margin-left:5px;" disabled="true" id="btnCart"><i style="width:50px;" class="fa fa-shopping-cart text-white"></i> </button>
     <div id="divani"></div>
   
   </div>
@@ -226,7 +226,7 @@ $tech1 = str_replace("\n", "<br>", $tech);
         },1000);
       });
       $(".lit-img").on("click",function(){
-      	var img = $('<img style=" height: 300px; width: 350px;" src=POS/'+$(this).val()+' class="big-img">');
+      	var img = $('<img style=" height: 70%; width: 100%;" src=POS/'+$(this).val()+' class="big-img">');
       	$(".bs-example").empty();
       	$(".bs-example").append(img);
       });

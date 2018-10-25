@@ -94,7 +94,7 @@
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container">
         <a class="navbar-brand" href="#">
-           <img src="img/Logo/Logotipo 1.png" href="index.php" width="30%;" class="animated bounceInLeft">
+           <img id="logo" src="img/Logo/Logotipo 1.png" href="index.php" width="30%; !important" class="animated bounceInLeft">
        </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" style="background-color:rgba(87, 240, 74, 0.3);">
@@ -233,5 +233,15 @@
   });
 
   return false;
+});
+    
+    $(document).ready(function(){
+  $("#Cont-Popover").load("PopOver.php");
+    $('[data-toggle="popover"]').popover({
+      html:true,
+      content: function(){
+        return $("#Cont-Popover").html();
+      }
+    });
 });
 </script>
