@@ -2,7 +2,7 @@
     session_start(); 
     error_reporting(E_PARSE);
     include('modal.php');
-    require_once 'PopOver.php';
+  
 ?> 
    <link href="css/ihover.css" rel="stylesheet">
    <link href="css/footer.css" rel="stylesheet">
@@ -90,8 +90,7 @@
                  </div>
         </div>
 </nav>
-<div id="Cont-Popover" style="display:none;">
-            </div>
+
 <!-- end nav 1-->
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container">
@@ -220,6 +219,8 @@
         </div>
     </div>
 </nav>
+   <div id="Cont-Popover" style="display:none;">
+            </div>
     <script src="js/eskju.jquery.scrollflow.min.js"></script>
 <script>
     $('.dropdown-menu a.dropdown-toggle').on('click', function(e) { // desencadena el evento sobre estas clases
