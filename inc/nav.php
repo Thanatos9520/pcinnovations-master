@@ -1,19 +1,19 @@
 <?php 
     session_start(); 
     error_reporting(E_PARSE);
-	include('modal.php');
+    include('modal.php');
+    require_once 'PopOver.php';
 ?> 
    <link href="css/ihover.css" rel="stylesheet">
    <link href="css/footer.css" rel="stylesheet">
    <link href="css/nav.css" rel="stylesheet">
-
  <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet"> 
- 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
-
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+
+<nav class="navbar navbar-expand bg-dark navbar-dark">
    
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse1" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" style="background-color:rgba(87, 240, 74, 0.3);">
            <span class="fa fa-sort-desc"></span>
@@ -24,13 +24,13 @@
                     <h5 class="nav-item nav-link" href="#" style="color:#ffffff; margin-right:0px;"><i class="fa fa-phone text-white"></i> : +506 8301-2524</h5>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-item nav-link" href="#" style="color:#fdfdfd;"><i class="fa fa-envelope-o"></i> pcinnovations2020@yahoo.com</a>
+                    <a id="item1" class="nav-item nav-link" href="#" style="color:#fdfdfd;"><i class="fa fa-envelope-o"></i> pcinnovations2020@yahoo.com</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-item nav-link" href="https://www.facebook.com/PCInnovationsLA/"><i class="fa fa-facebook fa-x5 text-white"></i></a>
+                    <a id="item1" class="nav-item nav-link" href="https://www.facebook.com/PCInnovationsLA/"><i class="fa fa-facebook fa-x5 text-white"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-item nav-link" href="#"><i class="fa fa-twitter text-white" ></i></a>
+                    <a id="item1" class="nav-item nav-link" href="#"><i class="fa fa-twitter text-white" ></i></a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -78,7 +78,7 @@
                                   </a>
                                   <h4>
                                   <li id="cartme" style="cursor:pointer">
-                                    <a class="nav-item nav-link" id="cart_control" title="Carrito de compras" data-toggle="popover">
+                                    <a  class="nav-item nav-link" id="cart_control" title="Carrito de compras" data-toggle="popover">
                                       <i class="fa fa-shopping-cart fa-fw" id="cartir"></i>
                                     </a>
                                   </li>
