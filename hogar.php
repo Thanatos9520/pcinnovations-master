@@ -108,7 +108,7 @@
             <div align="center">
                 <?php
        if($nro_pagina>1){
-          echo "<a style='color:black;' href='pcgamer.php?num=".($nro_pagina-1)."'> Anterior ></a> ";
+          echo "<a style='color:black;' href='hogar.php?num=".($nro_pagina-1)."'> Anterior ></a> ";
        }
        for ($i=1; $i<=$can_paginas; $i++)
        {
@@ -116,11 +116,11 @@
                echo $i." ";
              }
            else{ 
-               echo "<a style='color:black;' href='pcgamer.php?num=$i'>$i</a> ";
+               echo "<a style='color:black;' href='hogar.php?num=$i'>$i</a> ";
            }
        } 
        if($nro_pagina<$can_paginas){
-           echo "<a style='color:black;' href='pcgamer.php?num=".($nro_pagina+1)."'> Siguiente ></a> "; 
+           echo "<a style='color:black;' href='hogar.php?num=".($nro_pagina+1)."'> Siguiente ></a> "; 
        }
        ?>
             </div>
