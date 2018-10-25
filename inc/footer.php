@@ -5,7 +5,7 @@
 
 <style>
     h4, p {
-  font-family: Georgia, Cambria, Times, "Times New Roman";
+
 }
     h4, h6{color:aliceblue}
 </style>

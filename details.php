@@ -95,7 +95,7 @@
    		</div>
    		</div>
               
-                <div class="col-sm-3 ml-auto p-2" style="background-color:#f0f0f0; border:1px solid; border-radius:5px; margin: 30px;">
+                <div class="col-sm-3 ml-auto p-2" style="background-color:#f0f0f0; height:290px; border:1px solid; border-radius:5px; margin: 30px;">
         <h3 style="color: black">₡<?php echo number_format($price); ?></h3>
         <hr>
         <a style="color: gray"><?php echo $product_name; ?></a>

@@ -7,11 +7,14 @@
    <link href="css/ihover.css" rel="stylesheet">
    <link href="css/footer.css" rel="stylesheet">
    <link href="css/nav.css" rel="stylesheet">
- <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet"> 
+ 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 
-
+<style>
+font-family: 'Raleway', sans-serif;
+</style>
 
 <nav class="navbar navbar-expand bg-dark navbar-dark">
    

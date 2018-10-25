@@ -3,7 +3,9 @@ body{
   background: #f0f0f0 !important;
 
 }
- .alinear{
+
+
+.alinear{
      display: inline-block;
      width: 70%;
      margin-top: 3px;
@@ -81,7 +83,11 @@ body{
         
  h1, h2, h3, p, li, h4, a 
     { 
-     font-family: 'Lora', serif; 
+     font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+line-height: 1.1;
+color: #292733;
+text-transform: uppercase;
     }
         
 a{color: black}

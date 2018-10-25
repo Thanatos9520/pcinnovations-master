@@ -19,14 +19,17 @@
     <link href="css/card.css" rel="stylesheet">
 </head>
 
-
+<style>
+    font-family: "Raleway";
+    
+    </style>
 
 <body>
 
     <!-- Navigation -->
     <?php include './inc/nav.php';
     include('conn.php');
-     $query=mysqli_query($conn,"select * from product where categoryid = 1 order by product_name");  
+     $query=mysqli_query($conn,"select * from product where categoryid = 1 order by product_price");  
       $nro_reg=mysqli_num_rows($query); 
 
       
@@ -39,7 +42,7 @@
         else 
         $inicio=0;
         
-       $query=mysqli_query($conn,"select * from product where categoryid = 1 order by product_name limit $inicio,$reg_por_pagina");  
+       $query=mysqli_query($conn,"select * from product where categoryid = 1 order by product_price limit $inicio,$reg_por_pagina");  
       
       $can_paginas=ceil($nro_reg / $reg_por_pagina);
     ?>
@@ -50,14 +53,20 @@
 
         
             <div style="height: 30px;"></div>
-            <h1 class="mt-4 mb-3">Advance
-                <small>Equipment</small>
-            </h1>
-
+          <div class="row">
+        <div class="col-lg-4">
+           <h1 style=" border-style: double; border-color:#1d1d7e; ">Tarjeta Madre</h1>
+        </div>
+        </div>
+               <div class="row">
+        <div class="col-lg-12">
+            <img src="img/Banner_Productos/mobo.jpg" style="width:100%;">
+        </div>
+        </div>
+<div style="height: 50px;"></div>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a style="color: #000;" href="index.php">Home</a></li>
-                <li class="breadcrumb-item"><a style="color: #000;" href="equipment_seccion.php">New Equipment</a></li>
-                <li class="breadcrumb-item active">Advance Equipment</li>
+                <li class="breadcrumb-item"><a style="color: #000;" href="index.php">Inicio</a></li>
+                <li class="breadcrumb-item active">Tarjeta Madre</li>
             </ol>  
 		
     <div id="A_Equipment" class="flex-container">
@@ -67,6 +76,7 @@
                 
              $id=$row['productid'];
              $name=$row['product_name'];
+             $price=$row['product_price'];
              $photo=$row['photo'];
     			?>
                                 
@@ -79,7 +89,7 @@
 
                           <div class="info">
                               <h3><?php echo $name; ?></h3>
-                              <h4>$ <?php echo $price; ?></h4>
+                              <h4>₡ <?php echo $price; ?></h4>
                               <form action="details.php?id=<?php echo $id; ?>" method="post" name="Detalle">
                                 <input name="id_txt" type="hidden" value="<?php echo $id; ?>" />
                                 <input name="Detalles" type="submit" value="Detalles" class="btn btn-info" />
