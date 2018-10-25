@@ -4,3 +4,5 @@ Los cambios fueron reordenamiento y creacion de nuevo navbar, nuevos estilos
 Fecha modificacion 24-10-2018
 
 Cambios sobre nav 1: @media screen 
+
+Cambios en nav añadimos boton de buscar */ Estilos en nav.css */ configuracion para que aparezca en dispositivos mayores a 950px
