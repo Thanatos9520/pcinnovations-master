@@ -86,8 +86,8 @@
                                  ';
                             endif;
                         ?>
+                         </ul>
                  </div>
-            </ul>
         </div>
 </nav>
 <div id="Cont-Popover" style="display:none;">
