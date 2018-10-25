@@ -45,3 +45,15 @@ img
 border-radius: 15px;
 box-shadow: #999 5px 5px 10px;
 }
+
+.ih-item.square.effect4 a:hover .info {
+  width: 100% !important;
+  height: 120px;
+  visibility: visible;
+  top: 40px;
+  -webkit-transform: rotate(0deg) translate(0, 0);
+  -moz-transform: rotate(0deg) translate(0, 0);
+  -ms-transform: rotate(0deg) translate(0, 0);
+  -o-transform: rotate(0deg) translate(0, 0);
+  transform: rotate(0deg) translate(0, 0);
+}
