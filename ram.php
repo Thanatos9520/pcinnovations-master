@@ -31,6 +31,8 @@
     include('conn.php');
      $query=mysqli_query($conn,"select * from product where categoryid = 5 order by product_price");  
       $nro_reg=mysqli_num_rows($query); 
+     $Total = $nro_reg;
+      
 
       
     $reg_por_pagina=9; 
@@ -68,6 +70,8 @@
                 <li class="breadcrumb-item"><a style="color: #000;" href="index.php">Inicio</a></li>
                 <li class="breadcrumb-item active">Memoria Ram</li>
             </ol>  
+    <a style="color: gray" >Disponemos de <?php echo $Total ?> productos</a>
+
 		
     <div id="A_Equipment" class="flex-container">
       

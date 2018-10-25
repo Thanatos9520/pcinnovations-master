@@ -185,7 +185,7 @@ font-family: 'Raleway', sans-serif;
                         <div class="dropdown-divider"></div>
                         <li class="dropdown-submenu">
                             <a class="dropdown-item dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" href="#">
-                                <i class="fa fa-microchip fa-x3"></i> PROCESADORES
+                                 PROCESADORES
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li class="nav-item">

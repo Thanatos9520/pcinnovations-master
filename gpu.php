@@ -31,7 +31,7 @@
     include('conn.php');
      $query=mysqli_query($conn,"select * from product where categoryid = 6 order by product_price");  
       $nro_reg=mysqli_num_rows($query); 
-
+    $Total = $nro_reg;
       
     $reg_por_pagina=9; 
       
@@ -54,7 +54,7 @@
         
             <div style="height: 30px;"></div>
           <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-5">
            <h1 style=" border-style: double; border-color:#1d1d7e; ">Tarjeta de Video</h1>
         </div>
         </div>
@@ -68,6 +68,8 @@
                 <li class="breadcrumb-item"><a style="color: #000;" href="index.php">Inicio</a></li>
                 <li class="breadcrumb-item active">Tarjeta de Video</li>
             </ol>  
+            <a style="color: gray" >Disponemos de <?php echo $Total ?> productos</a>
+
 		
     <div id="A_Equipment" class="flex-container">
       

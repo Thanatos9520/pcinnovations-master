@@ -129,7 +129,7 @@
               <hr> 
         
             <br>
-<div class="descripcion" style="background-color:#ffffff; border:1px solid; border-radius:5px; padding-left:20px">
+<div class="descripcion" style="background-color:#ffffff;  border-radius:5px; padding-left:20px">
 
 <ul id="clothing-nav" class="nav nav-tabs" role="tablist" >
 	
