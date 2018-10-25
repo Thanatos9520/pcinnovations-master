@@ -3,3 +3,4 @@ Hubo cambios en el nav.css, nav.php, main2.css
 Los cambios fueron reordenamiento y creacion de nuevo navbar, nuevos estilos
 Fecha modificacion 24-10-2018
 
+Cambios sobre nav 1: @media screen 
