@@ -180,7 +180,7 @@ font-family: 'Raleway', sans-serif;
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">
-                                 Fans
+                                 FANS
                         </a>
                         <div class="dropdown-divider"></div>
                         <li class="dropdown-submenu">
