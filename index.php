@@ -105,6 +105,7 @@
         </div>
         <div class="resCarousel" data-items="2-4-4-4" data-interval="2000" data-slide="1" data-animator="lazy">
             <div class="resCarousel-inner">
+            <hr>
  <?php
       include('conn.php');
       $query=mysqli_query($conn,"select * from product where categoryid = 1 order by product_price");  
@@ -116,6 +117,7 @@
              $price=$row['product_price'];
              $photo=$row['photo'];
     			?>
+              
                <div class="item">
                     <div class="tile">
                         <div>
