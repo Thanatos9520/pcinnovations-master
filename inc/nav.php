@@ -76,6 +76,12 @@ font-family: 'Raleway', sans-serif;
                                  ';
                             else:
                                 echo ' 
+                                  <li class="nav-item">
+                                <input class="search-txt" type="text" name="" placeholder="Search Something">
+                                 <a id="item1" style="color: #e84118;" class="nav-item nav-link search-btn" href="#">
+                                   <i class="fa fa-search" style="font-size:18px"></i>
+                               </a>
+                           </li>
                                   <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#myModal">
                                     <i class="fa fa-user text-white"> Login</i>
                                   </a>
