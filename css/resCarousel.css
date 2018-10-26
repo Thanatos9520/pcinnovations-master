@@ -34,7 +34,7 @@
     /*float: left;
     overflow: hidden;*/
     width: 100%;
-    height: 50%;
+    height: 100% !important;
     position: relative;
 }
 
@@ -83,6 +83,58 @@
         overflow-x: auto;
     }
 }
+
+               
+        body {
+            font-family: 'Trirong', serif;
+            background: #eee;
+        }
+        
+        .p0 {
+            padding: 0;
+        }
+        
+        .resCarousel-inner .item {
+/*            border: 1px solid #f40909;*/
+            /*vertical-align: top;*/
+            width: 100%;
+            height: 350px;
+            text-align: center;
+            /*box-shadow: 0 1px 1px rgba(248, 7, 7, 0.1);*/
+        }
+        
+        .resCarousel-inner .item .tile div,
+        .banner .item div {
+            display: table;
+            width: 100%;
+            min-height: 100%;
+            text-align: center;
+           /*box-shadow: 0 1px 1px rgb(248, 7, 7);*/
+        }
+        
+        .resCarousel-inner .item h1 {
+            display: table-cell;
+            vertical-align: middle;
+            color: white;
+        }
+        
+        .banner .item div {
+            background: url('demoImg.jpg') center top no-repeat;
+            background-size: cover;
+            min-height: 550px;
+        }
+        
+        .item .tile div {
+            background: url('demoImg.jpg') center center no-repeat;
+            background-size: cover;
+            height: 200px;
+            color: white;
+        }
+        
+        .item div h1 {
+            background: rgba(0, 0, 0, .4);
+        }
+    </style>
 
 
 /*resCarousel Css End*/

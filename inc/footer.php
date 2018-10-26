@@ -15,6 +15,11 @@
     <div style="height: 15px;"></div>
         <div class="container">
         <div class="row">
+        <div class="col-md-3 col-xs-12 ">
+  <div class="fb-page" data-href="https://www.facebook.com/PCInnovationsLA/" data-tabs="timeline" data-height="330px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/PCInnovationsLA/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/PCInnovationsLA/">PC Innovations Latinoamérica</a></blockquote></div> 
+     </div>    
+      
+<!--
             <div class="col-md-3 col-xs-12 ">
                  <div style="height: 20px;"></div>
                 <div class="link-area">
@@ -29,6 +34,7 @@
                     <a href="#"><i class="fa fa-whatsapp" style="font-size:50px; color:#00eb2d; text-indent: 8px;"></i></a>
                 </div>
             </div>
+-->
                     
                 <div class="col-lg-3">
                     <div style="height: 20px;"></div>
@@ -138,3 +144,11 @@
         </div>
         </div>
 </section>
+ <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.2';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
