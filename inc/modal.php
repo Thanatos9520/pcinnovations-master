@@ -111,7 +111,7 @@
     </div>
 <!-- /.modal -->
 
-      <!-- Modal Login content-->
+ <!-- Modal Login content-->
 
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -122,30 +122,16 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title"> <img src="img/Logo/Logotipo_White.png" href="index.php" width="20%;" class="animated bounceInLeft"></h4>
         </div>
-          <style>
-           
-          </style>
+
         <div class="modal-body">
-          <form method="post" action='proccess/login.php' name="login_form">
+          <form method="POST" action='' id="login_form">
               <p><input type="text" class="span3" name="username" placeholder="Email" style="border-radius:7px;"></p>
               <p><input type="password" class="span3" name="password" placeholder="Password" style="border-radius:7px;"></p>
               <br>
-              <p><button type="submit" class="btn btn-lg btn-primary sweet-10" onclick="_gaq.push(['_trackEvent', 'example, 'try', 'Primary']);">Sign in</button>
-                  
+              <button type="submit" class="btn btn-lg btn-primary sweet-10">Sign in</button>
                 <a href="#">Forgot Password?</a>
-              </p>
             </form>
-            <center>
-			<?php
-				
-				if(isset($_SESSION['msg'])){
-					echo $_SESSION['msg'];
-					unset($_SESSION['msg']);
-				}
-			?>
-			</center>
         </div>
-          
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
@@ -153,21 +139,9 @@
       
     </div>
   </div>
-<script>
-   document.querySelector('.sweet-10').onclick = function(){
-        swal({
-          title: "Are you sure?",
-          text: "You will not be able to recover this imaginary file!",
-          type: "info",
-          showCancelButton: true,
-          confirmButtonClass: 'btn-primary',
-          confirmButtonText: 'Primary!'
-        });
-      };
-</script>
- <script>
-      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-    </script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="js/Login.js"></script>
+   
+<script src="js/sweetalert.min.js"></script>
 
 <!-- /.modal -->
+<!-- onclick="_gaq.push(['_trackEvent', 'example, 'try', 'Primary']);" // onclick del boton de login --> 
