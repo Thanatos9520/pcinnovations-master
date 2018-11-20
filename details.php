@@ -13,6 +13,7 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main2.css" rel="stylesheet">
     <link href="css/sweetalert.css" rel="stylesheet">  
+     <link href="css/resCarousel.css" rel="stylesheet" type="text/css">
  <script src="vendor/jquery/jquery.min.js"></script>
  <script src="js/sweetalert.min.js"></script>
     <!-- Custom styles for this template -->
@@ -97,7 +98,6 @@
               
                 <div class="col-sm-3 ml-auto p-2" style="background-color:#f0f0f0; height:290px; border:1px solid; border-radius:5px; margin: 30px;">
         <h3 style="color: black">₡<?php echo number_format($price); ?></h3>
-        <hr>
         <a style="color: gray"><?php echo $product_name; ?></a>
         <hr>
         <br>
@@ -178,9 +178,57 @@ $tech1 = str_replace("\n", "<br>", $tech);
      <br>
      <br>
       </div>
+      <div class="container p8">
+          <div class="row">
+        <div class="col-lg-4">
+           <h1 style=" border-style: double; border-color:#1d1d7e; ">Productos relacionados</h1>
+        </div>
+        </div>
+        <div class="resCarousel" data-items="2-4-4-4" data-interval="2000" data-slide="1" data-animator="lazy">
+            <div class="resCarousel-inner">
+        
+ <?php
+      include('conn.php');
+      $query=mysqli_query($conn,"select * from product ");  
+    
+    		while($row=mysqli_fetch_array($query)){
+                
+             $id=$row['productid'];
+             $name=$row['product_name'];
+             $price=$row['product_price'];
+             $photo=$row['photo'];
+    			?>
+              
+               <div class="item">
+                    <div class="tile">
+                        <div>
+                           
+                            <div class="img" style="width:100%; height:100%;">
+                            <img style="width:80%; height:80%;" src="POS/<?php if (empty($photo)){echo " upload/noimage.jpg ";}else{echo $photo;} ?>" alt="img">
+                          </div>
+                        </div>
+                        <h5><?php echo $name; ?></h5>
+                      
+                        <p>₡ <?php echo $price; ?></p>
+                        
+                        <form action="details.php?id=<?php echo $id; ?>" method="post" name="Detalle">
+                                <input name="id_txt" type="hidden" value="<?php echo $id; ?>" />
+                                <input name="Detalles" type="submit" value="Detalles" class="btn btn-danger" style="width:95%;" />
+                              </form>
+                    </div>
+                </div>
+                 <?php
+            }
+          ?>
+
+            </div>
+            <button class='btn btn-default leftRs'><</button>
+            <button class='btn btn-default rightRs'>></button>
+        </div>
+    </div>
       </div>    
       
-        
+         <div style="height: 50px;"></div>
     <!-- /.container -->
             
  <!-- Footer -->
@@ -231,6 +279,64 @@ $tech1 = str_replace("\n", "<br>", $tech);
       	$(".bs-example").append(img);
       });
     </script>
+    <script>
+        //ResCarouselCustom();
+        var pageRefresh = true;
+
+        function ResCarouselCustom() {
+            var items = $("#dItems").val(),
+                slide = $("#dSlide").val(),
+                speed = $("#dSpeed").val(),
+                interval = $("#dInterval").val()
+
+            var itemsD = "data-items=\"" + items + "\"",
+                slideD = "data-slide=\"" + slide + "\"",
+                speedD = "data-speed=\"" + speed + "\"",
+                intervalD = "data-interval=\"" + interval + "\"";
+
+
+            var atts = "";
+            atts += items != "" ? itemsD + " " : "";
+            atts += slide != "" ? slideD + " " : "";
+            atts += speed != "" ? speedD + " " : "";
+            atts += interval != "" ? intervalD + " " : ""
+
+            //console.log(atts);
+
+            var dat = "";
+            dat += '<h4 >' + atts + '</h4>'
+            dat += '<div class=\"resCarousel\" ' + atts + '>'
+            dat += '<div class="resCarousel-inner">'
+            for (var i = 1; i <= 14; i++) {
+                dat += '<div class=\"item\"><div><h1>' + i + '</h1></div></div>'
+            }
+            dat += '</div>'
+            dat += '<button class=\'btn btn-default leftRs\'><i class=\"fa fa-fw fa-angle-left\"></i></button>'
+            dat += '<button class=\'btn btn-default rightRs\'><i class=\"fa fa-fw fa-angle-right\"></i></button>    </div>'
+            console.log(dat);
+            $("#customRes").html(null).append(dat);
+
+            if (!pageRefresh) {
+                ResCarouselSize();
+            } else {
+                pageRefresh = false;
+            }
+            //ResCarouselSlide();
+        }
+
+        $("#eventLoad").on('ResCarouselLoad', function() {
+            //console.log("triggered");
+            var dat = "";
+            var lenghtI = $(this).find(".item").length;
+            if (lenghtI <= 30) {
+                for (var i = lenghtI; i <= lenghtI + 10; i++) {
+                    dat += '<div class="item"><div class="tile"><div><h1>' + (i + 1) + '</h1></div><h3>Title</h3><p>content</p></div></div>'
+                }
+                $(this).append(dat);
+            }
+        });
+    </script>
+    <script src="js/resCarousel.js"></script>
   </body>
     
 </html>
