@@ -67,7 +67,7 @@ if($action == 'ajax'){
 							$finales++;
 						?>	
 						<tr class="<?php echo $text_class;?>">
-							<td class='text-center'><img src="../../<?php if(empty($photo)){echo "upload/noimage.jpg";}else{echo $photo;} ?>" height="30px" width="30px;"></td>
+							<td class='text-center'><img src="../<?php if(empty($photo)){echo "upload/noimage.jpg";}else{echo $photo;} ?>" height="30px" width="30px;"></td>
 							<td ><?php echo $product_id;?></td>
 							<td ><?php echo $prod_name;?></td>
 							<td ><?php echo $category;?></td>
