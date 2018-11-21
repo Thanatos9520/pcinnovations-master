@@ -10,7 +10,8 @@
  
 	// DELETE FROM  database
     $sql = "DELETE FROM  product WHERE productid='$id_producto'";
-    $query = mysqli_query($conn,$sql);
+	$query = mysqli_query($conn,$sql);
+     
     // if product has been added successfully
     if ($query) {
         $messages[] = "El producto ha sido eliminado con éxito.";

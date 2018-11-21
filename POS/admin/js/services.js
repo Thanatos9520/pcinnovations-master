@@ -71,8 +71,32 @@ $( "#edit_product" ).submit(function( event ) {
   event.preventDefault();
 });
 
-
 $( "#add_product" ).submit(function( event ) {
+  var parametros=new FormData($(this)[0])
+    $.ajax({
+            type: "POST",
+            url: "save_product.php",
+            data: parametros,
+            contentType: false, 
+            processData: false, 
+             beforeSend: function(objeto){
+                $("#resultados").html("Enviando...");
+              },
+            success: function(datos){
+              swal(
+                'product added correctly!',
+                '',
+                'success'
+                  )
+            $("#resultados").html(datos);
+            load(1);
+            $('#addProductModal').modal('hide');
+          }
+    });
+  event.preventDefault();
+});
+
+/* $( "#add_product" ).submit(function( event ) {
   var parametros = $(this).serialize();
     $.ajax({
             type: "POST",
@@ -93,7 +117,7 @@ $( "#add_product" ).submit(function( event ) {
           }
     });
   event.preventDefault();
-});
+}); */
 
 $( "#delete_product" ).submit(function( event ) {
   var parametros = $(this).serialize();
