@@ -73,6 +73,7 @@ if($action == 'ajax'){
 							<td ><?php echo $category;?></td>
 							<td class='text-right'><?php echo number_format($price,2);?></td>
 							<td>
+							<a href="#addPhotoModal" class="add" data-toggle="modal" data-id="<?php echo $product_id;?>"><i class="material-icons" data-toggle="tooltip" title="Agregar foto">attachment</i></a>
 								<a href="#"  data-target="#editProductModal" class="edit" data-toggle="modal" data-id='<?php echo $product_id; ?>' data-name="<?php echo $prod_name;?>" data-category="<?php echo $category?>" data-description="<?php echo $description?>" data-tech="<?php echo $tech?>" data-video="<?php echo $video?>" data-stock="<?php echo $stock?>" data-price="<?php echo $price;?>"><i class="material-icons" data-toggle="tooltip" title="Editar" >&#xE254;</i></a>
 								<a href="#deleteProductModal" class="delete" data-toggle="modal" data-id="<?php echo $product_id;?>"><i class="material-icons" data-toggle="tooltip" title="Eliminar">&#xE872;</i></a>
                     		</td>

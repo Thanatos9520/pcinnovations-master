@@ -52,6 +52,8 @@
 	<?php include("modal/modal_edit.php");?>
 	<!-- Delete Modal HTML -->
 	<?php include("modal/modal_delete.php");?>
+    <?php include("modal/modal_photo.php");?>
 <script src="js/services.js"></script>
+<script src="js/dropzone.js"></script>
 <script src="custom.js"></script>
 </body>
