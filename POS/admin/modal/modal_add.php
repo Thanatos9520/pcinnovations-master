@@ -1,3 +1,4 @@
+<meta http-equiv=content-type content=text/html; charset=utf-8>
 <?php include '../../conn.php' ?>
 <div id="addProductModal" class="modal fade">
 		<div class="modal-dialog">

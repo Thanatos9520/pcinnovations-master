@@ -75,6 +75,7 @@ $( "#add_product" ).submit(function( event ) {
   var parametros=new FormData($(this)[0])
     $.ajax({
             type: "POST",
+            encoding:"UTF-8",
             url: "save_product.php",
             data: parametros,
             contentType: false, 

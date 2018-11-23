@@ -4,18 +4,21 @@
 	} elseif (!empty($_POST['name'])){
 	require_once ("../../conn.php");//Contiene funcion que conecta a la base de datos
 	// escaping, additionally removing everything that could be (html/javascript-) code
-    $name = mysqli_real_escape_string($conn,(strip_tags($_POST["name"],ENT_QUOTES)));
-    $category = mysqli_real_escape_string($conn,(strip_tags($_POST["supplier"],ENT_QUOTES)));
+    $name2 = mysqli_real_escape_string($conn,(strip_tags($_POST["name"],ENT_QUOTES)));
+	$name = utf8_decode($name2);
+	$category = mysqli_real_escape_string($conn,(strip_tags($_POST["supplier"],ENT_QUOTES)));
     $price = floatval($_POST["price"]);
     $supplier = mysqli_real_escape_string($conn,(strip_tags($_POST["category"],ENT_QUOTES)));  
-    $description = mysqli_real_escape_string($conn,(strip_tags($_POST["description"],ENT_QUOTES)));
-    $tech = mysqli_real_escape_string($conn,(strip_tags($_POST["tech"],ENT_QUOTES)));
-    $video = mysqli_real_escape_string($conn,(strip_tags($_POST["video"],ENT_QUOTES)));
+    $description2 = mysqli_real_escape_string($conn,(strip_tags($_POST["description"],ENT_QUOTES)));
+	$description = utf8_decode($description2);
+	$tech2 = mysqli_real_escape_string($conn,(strip_tags($_POST["tech"],ENT_QUOTES)));
+	$tech = utf8_decode($tech2);
+	$video = mysqli_real_escape_string($conn,(strip_tags($_POST["video"],ENT_QUOTES)));
 	$stock = intval($_POST["stock"]);
 	$fileInfo = PATHINFO($_FILES["image"]["name"]);
 	if (empty($_FILES["image"]["name"])){
 		$location="";
-	}
+	} 
 	else{
 		if ($fileInfo['extension'] == "jpg" OR $fileInfo['extension'] == "png") {
 			$newFilename = $fileInfo['filename'] . "_" . time() . "." . $fileInfo['extension'];
