@@ -2,10 +2,10 @@
 -- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 27-11-2018 a las 08:04:10
--- Versión del servidor: 10.1.25-MariaDB
--- Versión de PHP: 5.6.31
+-- Host: 127.0.0.1
+-- Generation Time: Dec 18, 2018 at 06:45 AM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,53 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `pcinnovations`
+-- Database: `pcinnovations`
 --
+
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `addinventory` (IN `userid` INT(11), IN `action` VARCHAR(50), IN `productid` INT(11), IN `quantity` DOUBLE, IN `inventory_date` DATETIME)  BEGIN 
+INSERT INTO inventory(userid, action, productid, quantity, inventory_date) VALUES (userid, action, productid, quantity, inventory_date);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `addproduct` (IN `product_name` VARCHAR(150), IN `categoryid` INT(11), IN `product_price` DOUBLE, IN `product_qty` DOUBLE, IN `supplierid` INT(11), IN `description` VARCHAR(1000), IN `photo` VARCHAR(400), IN `tech` VARCHAR(3000), IN `video` VARCHAR(1000))  BEGIN
+INSERT INTO product (product_name, categoryid, product_price, product_qty, supplierid, description, photo, tech, video) VALUES (product_name, categoryid , product_price , product_qty , supplierid , description , photo , tech, video);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `deleteimg` (IN `id` INT(11))  BEGIN
+DELETE FROM carousel WHERE idphoto = id;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarImagen` (IN `Productid` INT, IN `Photo` VARCHAR(100))  BEGIN
+   INSERT INTO carousel (idphoto,productid, photo) VALUES (default,Productid, Photo);
+   END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `listaproduct` ()  BEGIN
+select * from product left join category on category.categoryid=product.categoryid left join supplier on supplier.userid=product.supplierid;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_product` (`_productid` INT, `_product_name` VARCHAR(150), `_supplierid` INT, `_categoryid` INT, `_product_price` DOUBLE, `_photo` VARCHAR(200), `_product_qty` DOUBLE, `_description` VARCHAR(1000), `_tech` VARCHAR(3000), `_video` VARCHAR(1000))  BEGIN
+update product set 
+product_name = _product_name,
+supplierid = _supplierid,
+categoryid = _categoryid,
+product_price = _product_price,
+photo = _photo,
+product_qty = _product_qty,
+description = _description,
+tech = _tech,
+video = _video
+where productid = _productid;
+END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `carousel`
+-- Table structure for table `carousel`
 --
 
 CREATE TABLE `carousel` (
@@ -35,7 +75,7 @@ CREATE TABLE `carousel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Volcado de datos para la tabla `carousel`
+-- Dumping data for table `carousel`
 --
 
 INSERT INTO `carousel` (`productid`, `photo`, `idphoto`) VALUES
@@ -208,7 +248,7 @@ INSERT INTO `carousel` (`productid`, `photo`, `idphoto`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cart`
+-- Table structure for table `cart`
 --
 
 CREATE TABLE `cart` (
@@ -219,7 +259,7 @@ CREATE TABLE `cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Volcado de datos para la tabla `cart`
+-- Dumping data for table `cart`
 --
 
 INSERT INTO `cart` (`cartid`, `userid`, `productid`, `qty`) VALUES
@@ -228,16 +268,16 @@ INSERT INTO `cart` (`cartid`, `userid`, `productid`, `qty`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
   `categoryid` int(11) NOT NULL,
-  `category_name` varchar(30) CHARACTER SET latin1 NOT NULL
+  `category_name` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Volcado de datos para la tabla `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`categoryid`, `category_name`) VALUES
@@ -265,18 +305,18 @@ INSERT INTO `category` (`categoryid`, `category_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `customer`
+-- Table structure for table `customer`
 --
 
 CREATE TABLE `customer` (
   `userid` int(11) NOT NULL,
-  `customer_name` varchar(50) CHARACTER SET latin1 NOT NULL,
-  `address` varchar(150) CHARACTER SET latin1 NOT NULL,
-  `contact` varchar(50) CHARACTER SET latin1 NOT NULL
+  `customer_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `address` varchar(150) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `contact` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Volcado de datos para la tabla `customer`
+-- Dumping data for table `customer`
 --
 
 INSERT INTO `customer` (`userid`, `customer_name`, `address`, `contact`) VALUES
@@ -285,20 +325,20 @@ INSERT INTO `customer` (`userid`, `customer_name`, `address`, `contact`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `inventory`
+-- Table structure for table `inventory`
 --
 
 CREATE TABLE `inventory` (
   `inventoryid` int(11) NOT NULL,
   `userid` int(11) NOT NULL,
-  `action` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `action` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `productid` int(11) NOT NULL,
   `quantity` double NOT NULL,
   `inventory_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Volcado de datos para la tabla `inventory`
+-- Dumping data for table `inventory`
 --
 
 INSERT INTO `inventory` (`inventoryid`, `userid`, `action`, `productid`, `quantity`, `inventory_date`) VALUES
@@ -481,12 +521,16 @@ INSERT INTO `inventory` (`inventoryid`, `userid`, `action`, `productid`, `quanti
 (177, 1, 'Update Quantity', 13, 5, '2018-11-11 13:15:27'),
 (178, 1, 'Update Quantity', 11, 0, '2018-11-11 13:17:10'),
 (179, 1, 'Update Quantity', 12, 50, '2018-11-11 13:17:20'),
-(180, 1, 'Update Quantity', 12, 0, '2018-11-11 13:17:34');
+(180, 1, 'Update Quantity', 12, 0, '2018-11-11 13:17:34'),
+(181, 1, 'Add Product', 191, 8, '2018-12-04 20:19:17'),
+(182, 1, 'Add Product', 192, 8, '2018-12-04 20:21:10'),
+(183, 1, 'Add Product', 193, 8, '2018-12-04 20:22:12'),
+(184, 1, 'Add Product', 194, 8, '2018-12-04 20:23:37');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `product`
+-- Table structure for table `product`
 --
 
 CREATE TABLE `product` (
@@ -503,7 +547,7 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Volcado de datos para la tabla `product`
+-- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`productid`, `categoryid`, `product_name`, `product_price`, `product_qty`, `photo`, `supplierid`, `description`, `tech`, `video`) VALUES
@@ -548,9 +592,6 @@ INSERT INTO `product` (`productid`, `categoryid`, `product_name`, `product_price
 (48, 2, 'Intel Core I7 8700k', 260000, 0, 'upload/8700k_1528091988.png', 8, 'AGOTADO!\r\nDesktop PC performance is redefined with up to six cores for more processing power. Intel Hyper-Threading Technology1 delivers up to 12-way multitasking support. Intel Optane memory delivers amazing system responsiveness1 and Intel Turbo Boost 2.0 technology gives you that extra burst of performance for fluid gaming and smooth 4K video creation and sharing. \r\n\r\n\r\nUnlocked & Overlocking\r\n\r\nFor the enthusiast, the unlocked 8th Gen Intel Core processors provide you the opportunity to tweak the platform performance to its fullest potential and enjoy great gaming and VR experiences. An impressive portfolio of standard and unlocked devices for a broad range of usages and performance levels provides you more control and more granularity for overclocking2 your platform.\r\n', '    Type CPU / Microprocessor\r\n    Market segment Desktop\r\n    Family Intel Core i7\r\n    Model number ? i7-8700K\r\n    Frequency ? 3700 MHz\r\n    Turbo frequency 4700 MHz (1 core)\r\n    4600 MHz (2 cores)\r\n    4400 MHz (3 or 4 cores)\r\n    4300 MHz (5 or 6 cores)\r\n    Low power frequency 800 MHz\r\n    Bus speed ? 8 GT/s DMI\r\n    Clock multiplier ? 37\r\n    Socket Socket 1151 / H4 / LGA1151\r\n    Size 1.48\" x 1.48\" / 3.75cm x 3.75cm', ''),
 (49, 6, 'Asus Strix 1070 8gb', 275000, 2, 'upload/1070_1528093400.jpg', 8, 'AGOTADA!\r\n\r\nROG Strix GeForceÂ® GTX 1070 gaming graphics cards are packed with exclusive ASUS technologies, including DirectCU III Technology with Patented Wing-Blade Fans for 30% cooler and 3X quieter performance, and Industry-only Auto-Extreme Technology for premium quality and the best reliability. Aura RGB Lighting enables a gaming system personalization and VR-friendly HDMI ports let gamers easily enjoy immersive virtual reality experiences. ROG Strix GeForceÂ® GTX 1070 also has GPU Tweak II with XSplit Gamecaster that provides intuitive performance tweaking and instant gameplay streaming.\r\n\r\n', 'Graphics Engine\r\nNVIDIA GeForce GTX 1070\r\nBus Standard\r\nPCI Express 3.0\r\nOpenGL\r\nOpenGL®4.5\r\nVideo Memory\r\nGDDR5 8GB\r\nEngine Clock\r\nOC Mode - GPU Boost Clock : 1860 MHz , GPU Base Clock : 1657 MHz\r\nGaming Mode (Default) - GPU Boost Clock : 1835 MHz , GPU Base Clock : 1632 MHz\r\n*Retail goods are with default Gaming Mode, OC Mode can be adjusted with one click on GPU Tweak II\r\nCUDA Core\r\n1920\r\nMemory Clock\r\n8008 MHz\r\nMemory Interface\r\n256-bit\r\nResolution\r\nDigital Max Resolution:7680x4320\r\nInterface\r\nDVI Output : Yes x 1 (Native) (DVI-D)\r\nHDMI Output : Yes x 2 (Native) (HDMI 2.0)\r\nDisplay Port : Yes x 2 (Native) (Regular DP)\r\nHDCP Support : Yes\r\nPower Connectors\r\n1 x 8-pin\r\nAccessories\r\n2 x ROG Cable Ties\r\nSoftware\r\nASUS GPU Tweak II & Driver\r\nDimensions\r\n11.73 \" x 5.28 \" x 1.57 \" Inch\r\n29.8 x 13.4 x4 Centimeter', ''),
 (50, 6, 'Sapphire Nitro Rx 580 8gb', 180000, 3, 'upload/RX 580_1528094194.jpg', 8, 'Te presentamos la tarjeta grÃ¡fica Sapphire Nitro+ Radeon RX 580 8GB GDDR5. Construida sobre la arquitectura Polaris a prueba de futuro, la tarjeta grÃ¡fica SAPPHIRE NITRO + Radeon â„¢ RX 580 reproduce tus favoritos a 1080p y mÃ¡s allÃ¡, desde los Ãºltimos juegos de eSports y MOBA hasta los tÃ­tulos AAA mÃ¡s populares y de gran intensidad grÃ¡fica. La evoluciÃ³n del proceso FinFET 14 ha permitido a la nueva serie RX 500 alcanzar mayores relojes que las generaciones anteriores.', '    Overclock\r\n    Especificaciones de reloj: 1450/1411/2000 Mhz\r\n    2304 Steam Processors\r\n    Memoria: 8GB GDDR5\r\n    14nm FinFET\r\n    4º Generación Graphics Core Next\r\n    Interfaz: PCI Express 3.0\r\n    Memoria: 8GB GDDR5\r\n    Salidas: 1x DL-DVI-D/2x HDMI 2.0b/2x DisplayPort 1.4\r\n    Interfaz de memoria: 256 bit\r\n    Cooling solution: 2.2 slot active\r\n    OpenGL® 4.5\r\n    OpenCL 2.0\r\n    DirectX® 12\r\n    Vulkan™ 1.0\r\n    Shader Model 5.1\r\n    Interfaz de memoria:256bit\r\n    Cooling solution: 2.2 slot active\r\n    Enfriamiento Dual-X mejorado\r\n    Ventiladores de rodamientos de bolas dobles\r\n    Capacitores poliméricos de larga duración\r\n    ', ''),
-(52, 8, 'Black Conqueror Pro Instinct', 383000, 3, 'upload/azza-photios-250-3-x-usb20-1-x-usb30_1528668552.jpg', 8, 'Te presentamos la computadora Black Conqueror Pro Instinct 2018!!\r\n* Somos una empresa legalmente inscrita en Costa Rica y damos garantÃ­a real con factura timbrada*\r\n\r\n** Damos asesorÃ­a y el mejor trato personalizado del paÃ­s **\r\n** Todos los componentes son 100% nuevos y traen su respectivo nÃºmero serial**\r\n** PC dedicada para gamers de gama media-alta (50-60 FPS high resolution PUGB) como juegos fortnite o PUGB**\r\n** Windows 10 Pro 64bits Instalado y Google Chrome incluidos **\r\n** No incluye monitor **\r\n** Este precio solo aplica en efectivo o depÃ³sito bancario!**', '1) Case Azza Photios 250 Mid Tower\r\n\r\n2) Tarjeta Madre Gigabyte H110m-h\r\n- 1 PCIe 3.0 x 16 slots\r\n- Socket LGA 1151 Sétima generacion/sexta Generacion\r\n- 2 PCI-E 3.0 x 1 slot\r\n- 4 Sata 6gb/seg\r\n- 32 GB memoria maximo 2400mhz\r\n- 4 x USB 3.1 Gen 1 port(s) (2 at back panel, blue, 2 at mid-board)\r\n- 6 x USB 2.0/1.1 port(s) (2 at back panel, black, 4 at mid-board)\r\n- 1 x D-Sub\r\n- 1 x HDMI\r\n\r\n3) Procesador Intel 7va Generacion i5 7500\r\n* Se puede hacer upgrade a Gtx 1060 6gb sin producir cuello de botella!\r\n- 4 Núcleos\r\n- 4 Subprocesadores\r\n- Turbo boost tech 2.0 pasa de 3.4ghz hasta 3.8ghz\r\n- 6 mb Caché\r\n- Litografía 14nm\r\n- TDP 65 wats\r\n\r\n4) Fuente de Poder Marca EVGA 600 wats No modular 80+ White Certificada\r\n\r\n5) Memoria Marca Corsair DDR 4 8gb 2133mhz\r\n\r\n7) Disco duro Toshiba 1 tb 7200 rpm\r\n\r\n8) Tarjeta Grafica Gigabyte Nvidia Geforce GTX 1050ti 4gb\r\n- PCI express 3.0\r\n- Velocidad de 128 bits\r\n- Memoria 4gb DDR 5\r\n- Suporta HDMI/Dual-link/DVI-D\r\n- DirectX 12\r\n- OpenGL 4.5', 'No hay disponible'),
-(53, 8, 'White Tiger PRO Instinc Promocion!!', 726000, 3, 'upload/in-win-303c-rgb-negro_1528671832.jpg', 8, 'Se integra a la manada de PC Innovations la nueva #WhiteTigerProInstinct2018\r\nPuedes adquirirla en este momento a tan sÃ³lo: â‚¡726,000 Colones\r\n(HACEMOS ENVÃOS A TODO EL PAÃS).\r\n\r\nUn 100% de calificaciones positivas en mercado libre. Clientes 100% satisfactorios y contentos.\r\nPara ver nuestra reputaciÃ³n puedes acceder por medio de este enlace:\r\nhttps://articulo.mercadolibre.co.cr/MCR-422791833-computadoâ€¦\r\n\r\n* Costo del envÃ­o dependiendo del lugar. Gratis alrededores de Curridabat. hasta 8km de la tienda\r\n\r\n* Todos nuestros productos cuentan con garantia de 1 aÃ±o por defectos de fÃ¡brica.\r\n\r\n* Somos tienda fisica. Se puede retirar el producto en Curridabat, San JosÃ©.\r\n\r\nHorario de AtenciÃ³n en Tienda ElectrÃ³nica(Facebook y Mercado Libre):\r\nL-V 8:00am a 10:00pm y S-D 10am a 8:00pm.\r\n\r\nHorario de AtenciÃ³n en Tienda FÃ­sica:\r\nL-V 11:00am a 8:00pm y S 11:00am a 7:00pm\r\nD 1:00PM-7:00 PM (Trabajamos DÃ­as Festivos)', '1- Case Inwin 303 Blanco RGB incluidos 3 Fans Corsair ML120 Led White 120mm Premium Magnetic Levitation\r\n2- Tarjeta Gigabyte Z270x-Designare RGB de Lujo Led Blue \r\n- ATX\r\n- Dedicada para overclokear el procesador Intel i7 7700k\r\n- 3 PCIe 3.0 x 16 slots para AMD Crossfire Technology-Nvidia SLi\r\n- Socket LGA 1151 Setima Generación\r\n- Intel Z270 Chipset\r\n- 3 PCI-E 3.0 x 1 slot\r\n- 1 Turbo M.2 slot\r\n- 6 Sata 6gb/seg y 2 Sata Express\r\n- 6 USB\r\n- 2 USB 3.1 gen 2!!\r\n- 64 GB memoria a 3866mhz XMP Ready\r\n- Soporta DVI-D, HDMI\r\n3-Procesador Intel I7 7700k Unlocked\r\n- 4.2 hasta 4.5 ghz\r\n- LGA1151\r\n- 8MB Caché\r\n- 4 nucleos y 8 subprocesadores\r\n4-Memoria Ram Trident DDR4 8gb 3200mhz \r\n5-PSU Thermaltake SmartPro RGB 650 Wats Bronce 80+\r\n- Su color led azul combina con la GPU y la tarjeta madre haciendo el diseño de la misma perfecta\r\n6-Enfriamento liquido Corsair H100i v2 240mm radiador\r\n7-Asus Strix Geforce Gtx 1070 8 gb\r\n8-1 tb HDD Tosiba 7200 rpm\r\n\r\n', ''),
-(54, 8, 'Stylist Red/Black Pro', 571000, 3, 'upload/s340 elite rojo_1528674076.jpg', 8, 'Se integra a la manada de PC Innovations la nueva \r\n#Stylist Red/Black Pro \r\nPuedes adquirirla en este momento a tan sÃ³lo: â‚¡571,000 Colones\r\n(HACEMOS ENVÃOS A TODO EL PAÃS).\r\n\r\nUn 100% de calificaciones positivas en mercado libre. Clientes 100% satisfactorios y contentos.\r\nPara ver nuestra reputaciÃ³n puedes acceder por medio de este enlace:\r\nhttps://articulo.mercadolibre.co.cr/MCR-422791833-computadoâ€¦\r\n\r\n* Costo del envÃ­o dependiendo del lugar. Gratis alrededores de Curridabat. hasta 8km de la tienda\r\n\r\n* Todos nuestros productos cuentan con garantia de 1 aÃ±o por defectos de fÃ¡brica.\r\n\r\n* Somos tienda fisica. Se puede retirar el producto en Curridabat, San JosÃ©.\r\n\r\nHorario de AtenciÃ³n en Tienda ElectrÃ³nica(Facebook y Mercado Libre):\r\nL-V 8:00am a 10:00pm y S-D 10am a 8:00pm.\r\n\r\nHorario de AtenciÃ³n en Tienda FÃ­sica:\r\nL-V 11:00am a 8:00pm y S 11:00am a 7:00pm\r\nD 1:00PM-7:00 PM (Trabajamos DÃ­as Festivos)', '1) Case NZXT S340 Color Negro/Rojo con 2 fans de 120mm incluido\r\n\r\n2) Tarjeta Msi z370 A-pro\r\n- 2 PCIe 3.0 x 16 slots para AMD Crossfire Technology\r\n- Socket LGA 1151 Octava generacion\r\n- 4 PCI-E 3.0 x 1 slot\r\n- 1 Turbo M.2 slot\r\n- 6 Sata 6gb/seg\r\n- 64 GB memoria a 4000mhz\r\n- Soporta DVI-D, Display port, VGA\r\n\r\n3) Procesador Intel 8va Generacion i5 8400\r\n\r\n4) PSU Corsair 650 wats No modular 80+ White\r\n\r\n6) Memoria Hyperx Fury 8gb 2666mhz DDR4\r\n\r\n7) HDD Toshiba 1 tb 7200 rpm\r\n\r\n8) Gigabyte Geforce Gtx 1060 6 gb OC Windforce\r\n', ''),
 (55, 6, 'Geforce Titan Z 12gb', 250000, 0, 'upload/titan Z_1528675311.jpg', 8, 'NO HAY EN STOCK!\r\n\r\nTe traemos la potente Geforce GTX TITAN Z 12 GB Nueva de paquete al precio mÃ¡s bajo del mercado + 1 aÃ±o de garantia!!\r\n* Solo efectivo o depÃ³sito bancario por ser precio rebajado!!*\r\n* GrÃ¡fica diseÃ±ada para usar hasta 4 monitores hasta 4K!\r\n* Factura timbrada!*\r\n\r\nUn 100% de calificaciones positivas. Clientes 100% satisfactorios y contentos.\r\n\r\n* Costo del envÃ­o dependiendo del lugar. Gratis alrededores de Curridabat. hasta 8km de la tienda\r\n\r\n* Todos nuestros productos cuentan con garantia por defectos de fÃ¡brica.\r\n\r\n* Somos tienda fisica. Se puede retirar el producto en Curridabat, San JosÃ©.\r\n\r\n* Horario:\r\nContacto:\r\nL-V 8:00am a 10:00pm y S-D 10am a 8:00pm\r\n\r\n* DespuÃ©s de la compra les agradecemos que nos califiquen segÃºn su opiniÃ³n! Es muy valioso su comentario para seguir mejorando!\r\n\r\nEs un gusto atenderlos...', 'CUDA Cores: 5760\r\n* Base Clock (MHz): 705\r\n* Boost Clock (MHz): 876\r\n* Texture Fill Rate (billion/sec): 338\r\n* Memory Speed 7.0 Gbps\r\n* Standard Memory Config: 12288 MB\r\n* Memory Interface GDDR5\r\n* Memory Interface Width: 768-bit (384-bit per GPU)\r\n* Memory Bandwidth (GB/sec0:) 672', ''),
 (56, 14, 'NZXT Kraken X42', 66000, 2, 'upload/NZXT-Kraken-X42_1528676116.png', 8, 'The all-new Kraken Series features the most advanced controls ever to be included in an all-in-one liquid cooler. Through CAMâ€™s software interface, users can fine-tune settings to ensure an optimal performance, even in the most intense gaming sessions. Everything, including the pump, radiator, and the fans, have been redesigned to bring you the greatest experience in liquid cooling, all backed by an industry-leading 6-year warranty.  ', 'Dimensions	Radiator: 175 x 143 x 30mm\r\nPump: 80 x 80 x 52.9mm\r\nMaterial(s)	Aluminum, copper, plastic, ultra-low evaporation rubber, nylon sleeving\r\nWeight	890g\r\nCPU & Socket	Intel Socket 1151, 1150, 1155, 1156, 1366, 2011, 2011-3, 2066\r\nAMD Socket AM4, FM2+, FM2, FM1, AM3+, AM3, AM2+, AM2\r\nRAM Height Clearance	35mm\r\nControl Modes	Fan: Silent / Performance / Custom / Manual\r\nPump: Silent / Performance / Custom / Manual\r\nControl Method	Software with CAM\r\nLED Modes	Preset Modes: Fixed, Breathing, Fading, Marquee, Covering Marquee, Pulse, Spectrum Wave, Alternating, Tai Chi, Water Cooler, Loading\r\nReactive Modes: Smart and Audio\r\nPump Speed	1,600~2,800 +/- 300RPM\r\nFan Model	Aer P140\r\nNumber of Fans	1\r\nFan Speed	500~1,800 +/- 300RPM\r\nFan Noise Level	21-38dBA\r\nWarranty	6 years\r\nModel Number	RL-KRX42-01\r\nRL-KRX42-02 (Includes AM4 Bracket)\r\nUPC	815671012852\r\n815671013422 (Includes AM4 Bracket)\r\nEAN	5060301693184\r\n5060301693740 (Includes AM4 Bracket)', ''),
 (57, 14, 'NZXT Kraken X62', 92000, 2, 'upload/large_c6637a7493d26889_1528676276.png', 8, 'The all-new Kraken Series features the most advanced controls ever to be included in an all-in-one liquid cooler. Through CAMâ€™s software interface, users can fine-tune settings to ensure an optimal performance, even in the most intense gaming sessions. Everything, including the pump, radiator, and the fans, have been redesigned to bring you the greatest experience in liquid cooling, all backed by an industry-leading 6-year warranty.  ', 'Dimensions	Radiator: 315 x 143 x 30mm\r\nPump: 80 x 80 x 52.9mm\r\nMaterial(s)	Aluminum, copper, plastic, ultra-low evaporation rubber, nylon sleeving\r\nWeight	1.29kg\r\nCPU & Socket	Intel Socket 1151, 1150, 1155, 1156, 1366, 2011, 2011-3, 2066\r\nAMD SocketTR4, AM4, FM2+, FM2, FM1, AM3+, AM3, AM2+, AM2\r\nRAM Height Clearance	35mm\r\nControl Modes	Fan: Silent / Performance / Custom / Manual\r\nPump: Silent / Performance / Custom / Manual\r\nControl Method	Software with CAM\r\nLED Modes	Preset Modes: Fixed, Breathing, Fading, Marquee, Covering Marquee, Pulse, Spectrum Wave, Alternating, Tai Chi, Water Cooler, Loading\r\nReactive Modes: Smart and Audio\r\nPump Speed	1,600~2,800 +/- 300RPM\r\nFan Model	Aer P140\r\nNumber of Fans	2\r\nFan Speed	500~1,800 +/- 300RPM\r\nFan Noise Level	21-38dBA\r\nWarranty	6 years\r\nModel Number	RL-KRX62-01\r\nRL-KRX62-02 (Includes AM4 Bracket)\r\nUPC	815671012876\r\n815671013446 (Includes AM4 Bracket)\r\nEAN	5060301693207\r\n5060301693764 (Includes AM4 Bracket) ', ''),
@@ -619,8 +660,7 @@ INSERT INTO `product` (`productid`, `categoryid`, `product_name`, `product_price
 (124, 16, 'Corsair Strafe RGB MK.2 - Cherry MX Silent ', 90000, 10, 'upload/corsair-strafe-rgb-mk2-cherry-mx-silent.jpg', 8, 'No disponible', 'No disponible', 'No disponible'),
 (125, 16, 'Corsair K70 RGB MK.2 ', 97000, 10, 'upload/corsair-k70-rgb-mk2.jpg', 8, 'No disponible', 'No disponible', 'No disponible'),
 (126, 16, 'Corsair K70 RGB MK.2 Rapidfire ', 99000, 10, 'upload/corsair-k70-rgb-mk2-rapidfire.jpg', 8, 'No disponible', 'No disponible', 'No disponible'),
-(127, 16, 'Corsair K70 RGB MK.2 SE ', 105000, 10, 'upload/corsair-k70-rgb-mk2-se.jpg', 8, 'No disponible', 'No disponible', 'No disponible');
-INSERT INTO `product` (`productid`, `categoryid`, `product_name`, `product_price`, `product_qty`, `photo`, `supplierid`, `description`, `tech`, `video`) VALUES
+(127, 16, 'Corsair K70 RGB MK.2 SE ', 105000, 10, 'upload/corsair-k70-rgb-mk2-se.jpg', 8, 'No disponible', 'No disponible', 'No disponible'),
 (128, 16, 'Corsair K95 RGB Platinum - Cherry MX ', 110000, 10, 'upload/corsair-k95-rgb-platinum-cherry-mx-speed.jpg', 8, 'No disponible', 'No disponible', 'No disponible'),
 (129, 17, 'Corsair Harpoon RGB ', 16000, 10, 'upload/corsair-harpoon-rgb.jpg', 8, 'No disponible', 'No disponible', 'No disponible'),
 (130, 17, 'Corsair M65 Pro RGB Blanco ', 33000, 10, 'upload/corsair-m65-pro-rgb-blanco.jpg', 8, 'No disponible', 'No disponible', 'No disponible'),
@@ -658,7 +698,8 @@ INSERT INTO `product` (`productid`, `categoryid`, `product_name`, `product_price
 (162, 1, 'Gigabyte Aorus X470 Gaming 5 Wifi ', 132000, 10, 'upload/gigabyte-aorus-x470-gaming-5-wifi.jpg', 10, 'No disponible', 'No disponible', 'No disponible'),
 (163, 12, 'Lenovo Ideapad 330- I3 8130U', 260000, 10, 'upload/lenovo-ideapad-330.jpeg', 8, 'No disponible', 'No disponible', 'No disponible'),
 (164, 12, 'Lenovo ideapad N4200', 198000, 10, 'upload/320c5-4.jpg', 10, '15.6\" 1 tb 4gb Black win 10 Eng 1366 x 768 resolución', 'No disponible', 'No disponible'),
-(165, 12, 'Dell Inspiron l3573', 200000, 10, 'upload/w13267_454aa.jpg', 10, '15.6\" N5000 500gb Win10 Eng Black', 'No disponible', 'No disponible'),
+(165, 12, 'Dell Inspiron l3573', 200000, 10, 'upload/w13267_454aa.jpg', 10, '15.6\" N5000 500gb Win10 Eng Black', 'No disponible', 'No disponible');
+INSERT INTO `product` (`productid`, `categoryid`, `product_name`, `product_price`, `product_qty`, `photo`, `supplierid`, `description`, `tech`, `video`) VALUES
 (166, 12, 'Dell Inspiron 5570', 454500, 10, 'upload/w13267_454aa.jpg', 10, '15.6\" 8gb 1tb Win10 Silver Spa Res: 1920*1080', 'No disponible', 'No disponible'),
 (167, 12, 'Dell Inspiron 3467', 389000, 10, 'upload/w13267_454aa.jpg', 10, '14\" i5 7200U 8gb 1Tb Win10 Spa 1366 x 768 resolución', 'No disponible', 'No disponible'),
 (168, 12, 'Asus Vivobook X541NA', 178000, 10, 'upload/Notebook_Asus_VivoBook_X541NA-PD1003Y_N4200_1.1GHZ_500GB_4GB_tab_1.png', 10, '15.6\" 500gb 4gb ddr3 Intel Celeron 3350 1366 x 768 resolución', 'No disponible', 'No disponible'),
@@ -683,12 +724,15 @@ INSERT INTO `product` (`productid`, `categoryid`, `product_name`, `product_price
 (187, 4, 'MONITOR AOC E2070SWN ', 47500, 10, 'upload/MO07991.jpg', 10, 'No disponible', 'No disponible', 'No disponible'),
 (188, 4, 'MONITOR AOC 22\" LED E2270SWN   ', 56500, 10, 'upload/monitor-aoc-led-D_NQ_NP_623847-MLU27391022500_052018-O.jpg', 10, 'No disponible', 'No disponible', 'No disponible'),
 (189, 4, 'MONITOR AOC 21.5\" 22V2H ', 88200, 10, 'upload/81nHD-cECTL._SX425_.jpg', 10, 'No disponible', 'No disponible', 'No disponible'),
-(190, 4, 'MONITOR SAMSUNG 24\" CURVED 1920/1080 VGA HDMI LC24F390FHLXZP', 120000, 10, 'upload/C24F390FHL-FRONT.jpg', 10, 'No disponible', 'No disponible', 'No disponible');
+(190, 4, 'MONITOR SAMSUNG 24\" CURVED 1920/1080 VGA HDMI LC24F390FHLXZP', 120000, 10, 'upload/C24F390FHL-FRONT.jpg', 10, 'No disponible', 'No disponible', 'No disponible'),
+(191, 5, ' G.Skill Triden Z RGB 8GB 3000mhz', 53000, 8, 'upload/1140625_1543979957.jpg', 8, 'Latencia: 16-18-18-38\r\nFrecuencia: 3000mhz', '', ''),
+(193, 5, 'G.Skill Trident Z RGB 8GB 3200 mhz', 55000, 8, 'upload/1140625_1543980132.jpg', 8, 'Frecuencia: 3200mhz\r\nLatencia 16-18-18-38', '', ''),
+(194, 5, 'G.Skill Trident Z RGB 16GB', 115000, 8, 'upload/1140625_1543980217.jpg', 8, 'Frecuencia: 3200mhz\r\nLatencia:16-18-18-38', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `sales`
+-- Table structure for table `sales`
 --
 
 CREATE TABLE `sales` (
@@ -699,7 +743,7 @@ CREATE TABLE `sales` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Volcado de datos para la tabla `sales`
+-- Dumping data for table `sales`
 --
 
 INSERT INTO `sales` (`salesid`, `userid`, `sales_total`, `sales_date`) VALUES
@@ -721,7 +765,7 @@ INSERT INTO `sales` (`salesid`, `userid`, `sales_total`, `sales_date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `sales_detail`
+-- Table structure for table `sales_detail`
 --
 
 CREATE TABLE `sales_detail` (
@@ -732,7 +776,7 @@ CREATE TABLE `sales_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Volcado de datos para la tabla `sales_detail`
+-- Dumping data for table `sales_detail`
 --
 
 INSERT INTO `sales_detail` (`sales_detailid`, `salesid`, `productid`, `sales_qty`) VALUES
@@ -762,18 +806,18 @@ INSERT INTO `sales_detail` (`sales_detailid`, `salesid`, `productid`, `sales_qty
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `supplier`
+-- Table structure for table `supplier`
 --
 
 CREATE TABLE `supplier` (
   `userid` int(11) NOT NULL,
-  `company_name` varchar(50) CHARACTER SET latin1 NOT NULL,
-  `company_address` varchar(150) CHARACTER SET latin1 NOT NULL,
-  `contact` varchar(50) CHARACTER SET latin1 NOT NULL
+  `company_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `company_address` varchar(150) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `contact` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Volcado de datos para la tabla `supplier`
+-- Dumping data for table `supplier`
 --
 
 INSERT INTO `supplier` (`userid`, `company_name`, `company_address`, `contact`) VALUES
@@ -782,18 +826,18 @@ INSERT INTO `supplier` (`userid`, `company_name`, `company_address`, `contact`) 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
   `userid` int(11) NOT NULL,
-  `username` varchar(30) CHARACTER SET latin1 NOT NULL,
-  `password` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `username` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `password` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `access` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Volcado de datos para la tabla `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`userid`, `username`, `password`, `access`) VALUES
@@ -802,11 +846,11 @@ INSERT INTO `user` (`userid`, `username`, `password`, `access`) VALUES
 (8, 'Sebas', '81dc9bdb52d04dc20036dbd8313ed055', 3);
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `carousel`
+-- Indexes for table `carousel`
 --
 ALTER TABLE `carousel`
   ADD PRIMARY KEY (`idphoto`),
@@ -815,88 +859,88 @@ ALTER TABLE `carousel`
   ADD KEY `productid` (`productid`);
 
 --
--- Indices de la tabla `cart`
+-- Indexes for table `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`cartid`);
 
 --
--- Indices de la tabla `category`
+-- Indexes for table `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`categoryid`);
 
 --
--- Indices de la tabla `customer`
+-- Indexes for table `customer`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`userid`);
 
 --
--- Indices de la tabla `inventory`
+-- Indexes for table `inventory`
 --
 ALTER TABLE `inventory`
   ADD PRIMARY KEY (`inventoryid`);
 
 --
--- Indices de la tabla `product`
+-- Indexes for table `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`productid`);
 
 --
--- Indices de la tabla `sales`
+-- Indexes for table `sales`
 --
 ALTER TABLE `sales`
   ADD PRIMARY KEY (`salesid`);
 
 --
--- Indices de la tabla `sales_detail`
+-- Indexes for table `sales_detail`
 --
 ALTER TABLE `sales_detail`
   ADD PRIMARY KEY (`sales_detailid`);
 
 --
--- Indices de la tabla `supplier`
+-- Indexes for table `supplier`
 --
 ALTER TABLE `supplier`
   ADD PRIMARY KEY (`userid`);
 
 --
--- Indices de la tabla `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`userid`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `carousel`
+-- AUTO_INCREMENT for table `carousel`
 --
 ALTER TABLE `carousel`
   MODIFY `idphoto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1572;
 --
--- AUTO_INCREMENT de la tabla `cart`
+-- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
   MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de la tabla `category`
+-- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
   MODIFY `categoryid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
--- AUTO_INCREMENT de la tabla `inventory`
+-- AUTO_INCREMENT for table `inventory`
 --
 ALTER TABLE `inventory`
-  MODIFY `inventoryid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=181;
+  MODIFY `inventoryid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=185;
 --
--- AUTO_INCREMENT de la tabla `product`
+-- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `productid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=191;COMMIT;
+  MODIFY `productid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=195;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
