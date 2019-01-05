@@ -12,13 +12,8 @@
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 
-<<<<<<< HEAD
-<style>
-font-family: 'Raleway', sans-serif;
-</style>
 
-=======
->>>>>>> Logan
+
 <nav class="navbar navbar-expand bg-dark navbar-dark">
    
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse1" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" style="background-color:rgba(87, 240, 74, 0.3);">
@@ -40,10 +35,67 @@ font-family: 'Raleway', sans-serif;
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
+            <?php
+                          if(!$_SESSION['id']==""):
+                                echo ' 
+                                      Example split danger button 
+                               
+                <div class="">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <li>
+                        <i class="fa fa-user"></i>Mi cuenta
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    
+                            <a class="dropdown-item" href="#account" data-toggle="modal"><img src="svg/si-glyph-flower.svg"/ style="width:24px; height:24px;">
+                            My Account
+                            </a>
+                            <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#profile" data-toggle="modal"><img src="svg/si-glyph-man-doctor.svg"/ style="width:24px; height:24px;">
+                                My Profile
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#logout" data-toggle="modal"><img src="svg/si-glyph-turn-off.svg"/ style="width:24px; height:24px;"> Logout
+                                </a>
+                            
+                        </div>
+                    </li>
+
+                        </li>
+                        <h4>
+                            <li id="cartme" style="cursor:pointer">
+                            <a class="nav-item nav-link" id="cart_control" title="Carrito de compras" data-toggle="popover">
+                                <i class="fa fa-shopping-cart fa-fw" id="cartir"></i>
+                            </a>
+                            </li>
+                        </h4>                   
+                </div>
+                                 ';
+                            else:
+                                echo ' 
+                                <li class="nav-item">
+                                <input class="search-txt" type="text" name="" placeholder="Search Something">
+                                 <a id="item1" style="color: #e84118;" class="nav-item nav-link search-btn" href="#">
+                                   <i class="fa fa-search" style="font-size:18px"></i>
+                                 </a>
+                                </li>
+                                  <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#myModal">
+                                    <i class="fa fa-user text-white"> Login</i>
+                                  </a>
+                                  <h4>
+                                  <li id="cartme" style="cursor:pointer">
+                                    <a  class="nav-item nav-link" id="cart_control" title="Carrito de compras" data-toggle="popover">
+                                      <i class="fa fa-shopping-cart fa-fw" id="cartir"></i>
+                                    </a>
+                                  </li>
+                                  </h4>
+                                 ';
+                            endif;
+                        ?>
               <!-- aqui va el codigo php que esta abajo -->
 
-<<<<<<< HEAD
-                        </li>
+                        <!-- </li>
                         <h4>
                             <li id="cartme" style="cursor:pointer">
                             <a class="nav-item nav-link" id="cart_control" title="Carrito de compras" data-toggle="popover">
@@ -61,14 +113,6 @@ font-family: 'Raleway', sans-serif;
                                    <i class="fa fa-search" style="font-size:18px"></i>
                                </a>
                            </li>
-=======
-                            <li class="nav-item">
-                                <input class="search-txt" type="text" name="" placeholder="Search Something">
-                                 <a id="item1" style="color: #e84118;" class="nav-item nav-link search-btn" href="#">
-                                   <i class="fa fa-search" style="font-size:18px"></i>
-                                 </a>
-                                </li>
->>>>>>> Logan
                                   <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#myModal">
                                     <i class="fa fa-user text-white"> Login</i>
                                   </a>
@@ -79,6 +123,7 @@ font-family: 'Raleway', sans-serif;
                                     </a>
                                   </li>
                                   </h4>
+                                  '; -->
                          </ul>
                  </div>
         </div>

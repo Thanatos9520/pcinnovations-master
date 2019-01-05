@@ -18,21 +18,9 @@
     <link href="css/modern-business.css" rel="stylesheet">
     <link href="css/main2.css" rel="stylesheet">
     <link href="css/ihover.css" rel="stylesheet">
-<<<<<<< HEAD
       <link href="css/resCarousel.css" rel="stylesheet" type="text/css">
-      <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"
-  integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
-  crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
   
-
-
-   
-    
-=======
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
-      
->>>>>>> Logan
 </head>
   <body>
 	
@@ -46,7 +34,6 @@
       
     </header>
     <!-- Page Content -->
-<<<<<<< HEAD
      
     <hr>
                                
@@ -207,9 +194,6 @@
       
       
 <!--
-=======
-
->>>>>>> Logan
       <div class="contenedor scrollflow -pop -opacity">
         
 <div class="post">
@@ -272,12 +256,9 @@
   </div>
 
       </div>
-<<<<<<< HEAD
 -->
       
       
-=======
->>>>>>> Logan
     <div class="container">
     
         <div style="height:60px;" ></div>
@@ -355,7 +336,6 @@
    
     <script src="vendor/popper/popper.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<<<<<<< HEAD
     <script>
         //ResCarouselCustom();
         var pageRefresh = true;
@@ -414,7 +394,5 @@
         });
     </script>
 
-=======
->>>>>>> Logan
   </body>
 </html
