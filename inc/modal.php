@@ -65,7 +65,7 @@
         </div>
         <!-- /.modal-dialog -->
     </div>
-<!-- /.modal -->
+<!-- /.modal -->   
 
 <!-- Edit Profile -->
     <div class="modal fade" id="profile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
