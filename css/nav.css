@@ -106,7 +106,37 @@ a{color: black}
      
     }
   }
+<<<<<<< HEAD
  /*Boton de buscar*/
+=======
+
+  @media screen and (max-width: 320px)
+  {
+    a#item1{
+      visibility: hidden;
+      margin:0;
+      padding:0;
+      display: none;
+      
+    }
+    ul li h5.nav-item{
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: 950px)
+  {
+    a.search-btn
+    {
+      visibility: hidden;
+      margin:0;
+      padding:0;
+      display: none;
+    }
+  }
+
+  /*Boton de buscar*/
+>>>>>>> Logan
   .search-btn{ /* boton de busqueda*/
     width: 20px;
     height: 20px;
