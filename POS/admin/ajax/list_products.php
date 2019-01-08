@@ -32,10 +32,6 @@ if($action == 'ajax'){
       left join supplier on supplier.userid=product.supplierid order by product_name asc LIMIT $offset,$per_page");
 	//loop through fetched data
 	
- 
- 
-		
-	
 	if ($numrows>0){
 		
 	?>

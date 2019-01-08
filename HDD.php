@@ -19,10 +19,6 @@
     <link href="css/card.css" rel="stylesheet">
 </head>
 
-<style>
-    font-family: "Raleway";
-    
-    </style>
 
 <body>
 
@@ -127,7 +123,6 @@
        ?>
       </div>
       <!--End Pagination -->
-
     </div>
     <!-- /.container -->
 

@@ -4,7 +4,7 @@
 	require_once ("../../conn.php");
  
 	
-$action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
+$action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL) ?$_REQUEST['action']:'';
 if($action == 'ajax'){
 	$query = mysqli_real_escape_string($conn,(strip_tags($_REQUEST['query'], ENT_QUOTES)));
  
@@ -29,10 +29,7 @@ if($action == 'ajax'){
     $query = mysqli_query($conn,"select * from category order by categoryid asc LIMIT $offset,$per_page");
 	//loop through fetched data
 	
- 
- 
-		
-	
+
 	if ($numrows>0){
 		
 	?>
@@ -66,7 +63,7 @@ if($action == 'ajax'){
 							<td colspan='6'> 
 								<?php 
 									$inicios=$offset+1;
-									$finales+=$inicios -1;
+									$finales+=$inicios;
 									echo "Show $inicios a $finales of $numrows records";
 									echo paginate( $page, $total_pages, $adjacents);
 								?>

@@ -22,12 +22,13 @@
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
   
 </head>
-  <body>
+<body>
 	
 	<!-- End WOWSlider.com BODY section -->
 
-	        <?php include './inc/nav.php'; ?> 
+          <?php include './inc/nav.php'; ?> 
 	        <?php include './slider.php'; ?> 
+
     <header>
   <div style="height: 70px;"></div>
  
