@@ -2,44 +2,32 @@
 <html lang="en">
 
   <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
       
-      <link href="vendor/bootstrap/css/footer.css" rel="stylesheet">
+      
     <title>PCINNOVATIONS</title>
-    <?php include './inc/link.php'; ?>
+ 
     <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/footer.css" rel="stylesheet">
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <!--?php include './inc/link.php'; ?-->
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
     <link href="css/main2.css" rel="stylesheet">
     <link href="css/ihover.css" rel="stylesheet">
       <link href="css/resCarousel.css" rel="stylesheet" type="text/css">
-      <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"
-  integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
-  crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
   
-
-
-   
-    
 </head>
-
-
   <body>
 	
 	<!-- End WOWSlider.com BODY section -->
 
 	        <?php include './inc/nav.php'; ?> 
-      <div style="height: 15px;"></div>
 	        <?php include './slider.php'; ?> 
-       <div style="height: 20px;"></div>
-      
     <header>
   <div style="height: 70px;"></div>
  
@@ -409,5 +397,4 @@
     </script>
 
   </body>
-
 </html
