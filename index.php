@@ -49,6 +49,7 @@
      
     <hr>
                                
+<!--
                     <div class="container p8">
           <div class="row">
         <div class="col-lg-4">
@@ -196,6 +197,7 @@
         </div>
     </div>   
     </div>
+-->
     
                                 
                       <!-- end colored -->
@@ -205,7 +207,7 @@
    
       
       
-<!--
+
       <div class="contenedor scrollflow -pop -opacity">
         
 <div class="post">
@@ -268,7 +270,7 @@
   </div>
 
       </div>
--->
+
       
       
     <div class="container">
