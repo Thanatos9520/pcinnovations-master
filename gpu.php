@@ -17,12 +17,9 @@
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
     <link href="css/card.css" rel="stylesheet">
+
 </head>
 
-<style>
-    font-family: "Raleway";
-    
-    </style>
 
 <body>
 

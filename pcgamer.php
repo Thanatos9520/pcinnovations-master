@@ -19,15 +19,14 @@
     <link href="css/card.css" rel="stylesheet">
 </head>
 
-<style>
-    font-family: "Raleway";
-</style>
-
 <body>
 
     <!-- Navigation -->
     <?php include './inc/nav.php';
     include('conn.php');
+
+    
+
      $query=mysqli_query($conn,"select * from product where categoryid = 8 order by product_price");  
       $nro_reg=mysqli_num_rows($query); 
       $Total = $nro_reg;

@@ -20,7 +20,7 @@
 </head>
 
 <style>
-    font-family: "Raleway";
+   body{ font-family: "Raleway";}
     
     </style>
 

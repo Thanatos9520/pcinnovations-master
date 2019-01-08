@@ -3,7 +3,9 @@ body{
   background: #f0f0f0 !important;
 
 }
-
+nav{
+  font-size: 15px;
+}
 
 .alinear{
      display: inline-block;
@@ -106,9 +108,6 @@ a{color: black}
      
     }
   }
-<<<<<<< HEAD
- /*Boton de buscar*/
-=======
 
   @media screen and (max-width: 320px)
   {
@@ -136,7 +135,6 @@ a{color: black}
   }
 
   /*Boton de buscar*/
->>>>>>> Logan
   .search-btn{ /* boton de busqueda*/
     width: 20px;
     height: 20px;
