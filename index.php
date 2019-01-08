@@ -38,8 +38,7 @@
      
     <hr>
                                
-<!--
-                    <div class="container p8">
+<!--                    <div class="container p8">
           <div class="row">
         <div class="col-lg-4">
            <h1 style=" border-style: double; border-color:#1d1d7e; ">Tarjeta Madre</h1>
@@ -185,7 +184,6 @@
             <button class='btn btn-default rightRs'>></button>
         </div>
     </div>   
-    </div>
 -->
     
                                 
