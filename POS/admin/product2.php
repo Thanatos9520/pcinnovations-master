@@ -1,4 +1,3 @@
-
 <?php include('session.php'); ?>
 <?php include('header.php'); ?>
 <body>
@@ -62,6 +61,7 @@
 </div>
 </div>
 </div>
+<script src="../../js/dropzone.js"></script>
 <?php include('script.php'); ?>
 <?php include('modal.php'); ?>
 <?php include('add_modal.php'); ?>

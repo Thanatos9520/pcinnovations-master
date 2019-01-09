@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>FCHMAINTENANCE</title>
+    <title>PCINNOVATIONS</title>
 	
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
