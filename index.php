@@ -184,7 +184,7 @@
             <button class='btn btn-default rightRs'>></button>
         </div>
     </div>   
-    </div>-->
+-->
     
                                 
                       <!-- end colored -->

@@ -34,11 +34,13 @@
              mysqli_query($conn,"call GuardarImagen('$id','$target_path')"); 
              $pid=mysqli_insert_id($conn);
              
-             echo "<img src='$target_path'>";
+             
         }
-    }
-    
-
+	}
     ?>
-
+	<script>
+			window.alert('Product added successfully!');
+			window.history.back();
+		</script>
+          
 ?>
