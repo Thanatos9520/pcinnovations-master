@@ -9,7 +9,7 @@ $records = ($num_page - 1 )*$per_page;
 $cat = intval($_POST['cat']);
 
 $sqlCount = "SELECT * FROM product WHERE categoryid = $cat";
-$sqlPag = "SELECT * FROM product WHERE categoryid = $cat ORDER BY product_price LIMIT $records,$per_page";  
+$sqlPag = "SELECT * FROM product WHERE categoryid = $cat and product_qty > 0 ORDER BY product_price LIMIT $records,$per_page";  
 
 $count_rows = mysqli_query($conn,$sqlCount); // sacamos la cantidad de filas de la consulta
 $count = mysqli_num_rows($count_rows);
