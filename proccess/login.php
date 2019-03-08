@@ -24,7 +24,7 @@
 			$query=mysqli_query($conn,"select * from `user` where username='$fusername' and password='$fpassword'");
 			// comenzar hacer la vaidaciones para madar con json.
 			if(mysqli_num_rows($query)==0){
-				$datos = array('error'=>true, 'message'=>'Login Failed, Check your data!');
+				$datos = array('error'=>true, 'message'=>"Login Failed, Check your data!");
 				echo json_encode($datos);
 			}
 			else
