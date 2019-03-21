@@ -5,9 +5,6 @@ require_once 'modal.php';
 ?>   
 
 <style>
-    h4, p {
-
-}
     h4, h6{color:aliceblue}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,23 +16,6 @@ require_once 'modal.php';
             <div class="col-md-3 col-xs-12 ">
                 <div class="fb-page" data-href="https://www.facebook.com/PCInnovationsLA/" data-tabs="timeline" data-height="330px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/PCInnovationsLA/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/PCInnovationsLA/">PC Innovations Latinoamérica</a></blockquote></div> 
             </div>    
-                
-            <!--
-                        <div class="col-md-3 col-xs-12 ">
-                            <div style="height: 20px;"></div>
-                            <div class="link-area">
-                                <h4 class="text-uppercase">
-                                    <strong>Acerca de nostros</strong>
-                                </h4>
-                                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 70px;">
-                                <P style="color: white">Somos la empresa número 1 en el mejor trato personal y con muy buenos precios en el mercado.</P>
-                                <a href="#"><i class="fa fa-facebook" style="font-size:50px; color:#0a00ff;"></i></a>
-                                <a href="#"><i class="fa fa-twitter" style="font-size:50px; color:#08e3ff; text-indent: 8px;"></i></a>
-                                <a href="#"><i class="fa fa-linkedin" style="font-size:50px; color:#ededed;text-indent: 8px;"></i></a>
-                                <a href="#"><i class="fa fa-whatsapp" style="font-size:50px; color:#00eb2d; text-indent: 8px;"></i></a>
-                            </div>
-                        </div>
-            -->
                                 
             <div class="col-lg-3">
                 <div style="height: 20px;"></div>
@@ -50,10 +30,10 @@ require_once 'modal.php';
                         Computadores
                         </button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="pcgamer.php">Gaming</a>
-                            <a class="dropdown-item" href="kits.php">Combo / Kits</a>
-                            <a class="dropdown-item" href="hogar.php">Hogar / Oficina</a>
-                            <a class="dropdown-item" href="laptops.php">Laptops</a>
+                            <a class="dropdown-item" href="products.php?cat=8">Gaming</a>
+                            <a class="dropdown-item" href="products.php?cat=7">Combo / Kits</a>
+                            <a class="dropdown-item" href="products.php?cat=11">Hogar / Oficina</a>
+                            <a class="dropdown-item" href="products.php?cat=12">Laptops</a>
                         </div>
                     </div>
                     <div class="col-xs-12">
@@ -61,13 +41,13 @@ require_once 'modal.php';
                         Componentes
                         </button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="mobo.php">Tarjeta Madre</a>
-                            <a class="dropdown-item" href="ram.php">Memoria Ram</a>
-                            <a class="dropdown-item" href="gpu.php">Tarjeta de Video</a>
-                            <a class="dropdown-item" href="psu.php">Fuentes de Poder</a>
-                            <a class="dropdown-item" href="monitor.php">Monitores</a>
-                            <a class="dropdown-item" href="#">Enfriamiento</a>
-                            <a class="dropdown-item" href="case.php">Cases</a>
+                            <a class="dropdown-item" href="products.php?cat=1">Tarjeta Madre</a>
+                            <a class="dropdown-item" href="products.php?cat=5">Memoria Ram</a>
+                            <a class="dropdown-item" href="products.php?cat=6">Tarjeta de Video</a>
+                            <a class="dropdown-item" href="products.php?cat=9">Fuentes de Poder</a>
+                            <a class="dropdown-item" href="products.php?cat=4">Monitores</a>
+                            <a class="dropdown-item" href="products.php?cat=14">Enfriamiento</a>
+                            <a class="dropdown-item" href="products.php?cat=10">Cases</a>
                         </div>
                     </div>
                     <a class="btn btn-danger btn-sm alinear col-xs-12" href="contact.php">Contactenos</a>
@@ -136,10 +116,13 @@ require_once 'modal.php';
     </div>
 </section>
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = 'https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.2';
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.2';
+        fjs.parentNode.insertBefore(js, fjs);
+    }
+    (document, 'script', 'facebook-jssdk'));
+</script>

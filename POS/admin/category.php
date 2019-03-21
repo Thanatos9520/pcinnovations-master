@@ -24,14 +24,14 @@
         <div class="col-lg-12">
 		<div class='col-sm-4 pull-right'>
 				<div id="custom-search-input">
-                    <div class="input-group col-md-12">
-                        <input type="text" class="form-control" placeholder="Buscar"  id="q" onkeyup="load(1);" />
-                        <span class="input-group-btn">
-                            <button class="btn btn-info" type="button" onclick="load(1);">
-                                <span class="glyphicon glyphicon-search"></span>
-                            </button>
-                        </span>
-                    </div>
+                            <div class="input-group col-md-12">
+                                <input type="text" class="form-control" placeholder="Search"  id="q" onkeyup="load(1);" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-info" type="button" onclick="load(1);">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
                 </div>
 			</div>
 			<div class='clearfix'></div>

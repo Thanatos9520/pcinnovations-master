@@ -7,7 +7,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
       
-      
     <title>PCINNOVATIONS</title>
  
     <!-- Bootstrap core CSS -->
@@ -37,169 +36,13 @@
     <!-- Page Content -->
      
     <hr>
-                               
-<!--                    <div class="container p8">
-          <div class="row">
-        <div class="col-lg-4">
-           <h1 style=" border-style: double; border-color:#1d1d7e; ">Tarjeta Madre</h1>
-        </div>
-        </div>
-        <div class="resCarousel" data-items="2-4-4-4" data-interval="2000" data-slide="1" data-animator="lazy">
-            <div class="resCarousel-inner">
-        
- <?php
-      include('conn.php');
-      $query=mysqli_query($conn,"select * from product where categoryid = 1 order by product_price");  
-    
-    		while($row=mysqli_fetch_array($query)){
-                
-             $id=$row['productid'];
-             $name=$row['product_name'];
-             $price=$row['product_price'];
-             $photo=$row['photo'];
-    			?>
-              
-               <div class="item">
-                    <div class="tile">
-                        <div>
-                           
-                            <div class="img" style="width:100%; height:100%;">
-                            <img style="width:80%; height:80%;" src="POS/<?php if (empty($photo)){echo " upload/noimage.jpg ";}else{echo $photo;} ?>" alt="img">
-                          </div>
-                        </div>
-                        <h5><?php echo $name; ?></h5>
-                        <hr>
-                        <p>₡ <?php echo $price; ?></p>
-                        <hr>
-                        <form action="details.php?id=<?php echo $id; ?>" method="post" name="Detalle">
-                                <input name="id_txt" type="hidden" value="<?php echo $id; ?>" />
-                                <input name="Detalles" type="submit" value="Detalles" class="btn btn-danger" style="width:95%;" />
-                              </form>
-                    </div>
-                </div>
-                 <?php
-            }
-          ?>
-
-            </div>
-            <button class='btn btn-default leftRs'><</button>
-            <button class='btn btn-default rightRs'>></button>
-        </div>
-    </div>
-    <br>
-    <div class="row">
-     <div class="container p8 col-lg-6">
-          <div class="row">
-        <div class="col-lg-8">
-           <h1 style=" border-style: double; border-color:#1d1d7e; text-align: center; ">Tarjetas de video</h1>
-        </div>
-        </div>
-        <div class="resCarousel" data-items="2-4-4-4" data-interval="2000" data-slide="1" data-animator="lazy">
-            <div class="resCarousel-inner">
-           
- <?php
-      include('conn.php');
-      $query=mysqli_query($conn,"select * from product where categoryid = 6 order by product_price desc");  
-    
-    		while($row=mysqli_fetch_array($query)){
-                
-             $id=$row['productid'];
-             $name=$row['product_name'];
-             $price=$row['product_price'];
-             $photo=$row['photo'];
-    			?>
-              
-               <div class="item">
-                    <div class="tile">
-                        <div>
-                           
-                            <div class="img" style="width:100%; height:100%;">
-                            <img style="width:80%; height:80%;" src="POS/<?php if (empty($photo)){echo " upload/noimage.jpg ";}else{echo $photo;} ?>" alt="img">
-                          </div>
-                        </div>
-                        <h5><?php echo $name; ?></h5>
-                       
-                        <p>₡ <?php echo $price; ?></p>
-                        
-                        <form action="details.php?id=<?php echo $id; ?>" method="post" name="Detalle">
-                                <input name="id_txt" type="hidden" value="<?php echo $id; ?>" />
-                                <input name="Detalles" type="submit" value="Detalles" class="btn btn-danger" style="width:95%;"/>
-                              </form>
-                    </div>
-                </div>
-                 <?php
-            }
-          ?>
-
-            </div>
-            <button class='btn btn-default leftRs'><</button>
-            <button class='btn btn-default rightRs'>></button>
-        </div>
-    </div>    
-     <div class="container p8 col-sm-6">
-          <div class="row">
-        <div class="col-lg-8">
-           <h1 style=" border-style: double; border-color:#1d1d7e; ">Headset Gaming</h1>
-        </div>
-        </div>
-        <div class="resCarousel" data-items="2-4-4-4" data-interval="2000" data-slide="1" data-animator="lazy">
-            <div class="resCarousel-inner">
-           
- <?php
-      include('conn.php');
-      $query=mysqli_query($conn,"select * from product where categoryid = 19 order by product_price");  
-    
-    		while($row=mysqli_fetch_array($query)){
-                
-             $id=$row['productid'];
-             $name=$row['product_name'];
-             $price=$row['product_price'];
-             $photo=$row['photo'];
-    			?>
-              
-               <div class="item">
-                    <div class="tile">
-                        <div>
-                           
-                            <div class="img" style="width:100%; height:100%;">
-                            <img style="width:80%; height:80%;" src="POS/<?php if (empty($photo)){echo " upload/noimage.jpg ";}else{echo $photo;} ?>" alt="img">
-                          </div>
-                        </div>
-                        <h5><?php echo $name; ?></h5>
-                        
-                        <p>₡ <?php echo $price; ?></p>
-                       
-                        <form action="details.php?id=<?php echo $id; ?>" method="post" name="Detalle">
-                                <input name="id_txt" type="hidden" value="<?php echo $id; ?>" />
-                                <input name="Detalles" type="submit" value="Detalles" class="btn btn-danger" style="width:95%;"/>
-                              </form>
-                    </div>
-                </div>
-                 <?php
-            }
-          ?>
-
-            </div>
-            <button class='btn btn-default leftRs'><</button>
-            <button class='btn btn-default rightRs'>></button>
-        </div>
-    </div>   
-    </div>-->
-    
-                                
-                      <!-- end colored -->
-         
      
-     
-   
-      
-      
 
-      <div class="contenedor scrollflow -pop -opacity">
+<div class="contenedor scrollflow -pop -opacity">
         
 <div class="post">
 
-    <div class="ih-item square colored effect6 from_top_and_bottom"><a href="mobo.php">
+    <div class="ih-item square colored effect6 from_top_and_bottom"><a href="products.php?cat=1">
         <div class="img"><img src="img/Main/Mobo.png" style="height:185px;" alt="img"></div>
         <div class="info">
           <h3>Tarjeta Madre</h3>
@@ -209,7 +52,7 @@
 </div>
 <div class="post">
   
-    <div class="ih-item square colored effect6 from_top_and_bottom"><a href="gpu.php">
+    <div class="ih-item square colored effect6 from_top_and_bottom"><a href="products.php?cat=6">
         <div class="img"><img src="img/Main/GPU.jpg" style="height:185px;" alt="img"></div>
         <div class="info">
           <h3>Tarjeta de Video</h3>
@@ -219,7 +62,7 @@
   </div>
 <div class="post"> 
    
-    <div class="ih-item square colored effect6 from_top_and_bottom"><a href="monitor.php">
+    <div class="ih-item square colored effect6 from_top_and_bottom"><a href="products.php?cat=4">
         <div class="img"><img src="img/Main/Monitores.jpg" style="height:185px;" alt="img"></div>
         <div class="info">
           <h3>Monitores</h3>
@@ -229,7 +72,7 @@
   </div>
   <div class="post"> 
   
-    <div class="ih-item square colored effect6 from_top_and_bottom"><a href="kits.php">
+    <div class="ih-item square colored effect6 from_top_and_bottom"><a href="products.php?cat=7">
         <div class="img"><img src="img/Main/kits.jpg" style="height:185px;" alt="img"></div>
         <div class="info">
           <h3>Combo/Kits</h3>
@@ -239,7 +82,7 @@
   </div>  
   <div class="post"> 
 
-    <div class="ih-item square colored effect6 from_top_and_bottom"><a href="ram.php">
+    <div class="ih-item square colored effect6 from_top_and_bottom"><a href="products.php?cat=5">
         <div class="img"><img src="img/Main/ram.jpg" style="height:185px;" alt="img"></div>
         <div class="info">
           <h3>Memoria Ram</h3>
@@ -248,7 +91,7 @@
    
   </div> 
   <div class="post"> 
-    <div class="ih-item square colored effect6 from_top_and_bottom"><a href="pcgamer.php">
+    <div class="ih-item square colored effect6 from_top_and_bottom"><a href="products.php?cat=8">
         <div class="img"><img src="img/Main/combo.jpg" style="height:185px;" alt="img"></div>
         <div class="info">
           <h3>PC Gamer</h3>
@@ -294,18 +137,7 @@
             <hr>
         
        <div class="container">
-<!--
-        <div class="row">
 
-                <div style="height:60px;" ></div>
-        <div style="text-align:center" class="col-lg-12 scrollflow -pop -opacity">
-          <h2 >Nuestras Marcas</h2>
-          <h4 style="color:black">Nosotros representamos las mejores marcas</h4>
-          <h6>Nacional e internacional, nosotros manejamos las mejores marcass en el mercado para proveer un excelente servicio para nuestros clientes.</h6>
-       
-        </div>
-      </div>
--->
        
       <hr>
 
@@ -323,14 +155,7 @@
  
     <!-- Footer -->
       
-
       <?php include './inc/footer.php'; ?>  
-    
- 
-      
-    <!-- Bootstrap core JavaScript -->  
-
-      
 
     <script src="js/resCarousel.js"></script>
     <script src="js/eskju.jquery.scrollflow.min.js"></script>
