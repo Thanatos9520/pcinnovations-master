@@ -20,7 +20,7 @@
 
         $cat = intval($_GET['cat']); // resivimos la categoria de la url al presionar la categoria deseada, y solo seasn nums
         $sqlCat = "SELECT * FROM category WHERE categoryid = $cat";
-        $sqlCount = "SELECT * FROM product WHERE categoryid = $cat";
+        $sqlCount = "SELECT * FROM product WHERE categoryid = $cat AND product_qty > 0";
         $title = null;
         $resultCat = mysqli_query($conn,$sqlCat);
         $resultCount = mysqli_query($conn,$sqlCount);
@@ -63,7 +63,7 @@
         <!-- Footer -->
     <?php include './inc/footer.php'; ?>
     <!-- End Footer-->
-    <script src="POS/admin/js/list_products_pag.js"></script>
+    <script src="POS/js/list_prod_pag.js"></script>
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>

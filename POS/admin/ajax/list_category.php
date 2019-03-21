@@ -4,14 +4,14 @@
 	require_once ("../../conn.php");
  
 	
-$action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL) ?$_REQUEST['action']:'';
+$action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
 if($action == 'ajax'){
 	$query = mysqli_real_escape_string($conn,(strip_tags($_REQUEST['query'], ENT_QUOTES)));
  
 	$tables="category";
 	$campos="*";
 	$sWhere=" category_name LIKE '%".$query."%'";
-	$sWhere.=" order by category_name asc";
+	$sWhere.=" order by category_name";
 	
 	
 	include 'pagination.php'; //include pagination file
@@ -26,10 +26,13 @@ if($action == 'ajax'){
 	else {echo mysqli_error($conn);}
 	$total_pages = ceil($numrows/$per_page);
 	//main query to fetch the data
-    $query = mysqli_query($conn,"select * from category order by categoryid asc LIMIT $offset,$per_page");
+    $query = mysqli_query($conn,"select * from category order by category_name asc LIMIT $offset,$per_page");
 	//loop through fetched data
 	
-
+ 
+ 
+		
+	
 	if ($numrows>0){
 		
 	?>
@@ -37,8 +40,8 @@ if($action == 'ajax'){
 			<table class="table table-striped table-hover">
 				<thead>
 					<tr>
-						<th>Category ID </th>
-						<th>Category Name </th>
+                        <th class='text-center'>ID</th>
+						<th>Category </th>
 						<th></th>
 					</tr>
 				</thead>
@@ -46,16 +49,16 @@ if($action == 'ajax'){
 						<?php 
 						$finales=0;
 						while($row = mysqli_fetch_array($query)){
-                        	$categoryid=$row['categoryid'];
-							$category_name=$row['category_name'];		
+                        	$category_name=$row['category_name'];
+							$category_id=$row['categoryid'];
 							$finales++;
 						?>	
 						<tr class="<?php echo $text_class;?>">
-							<td ><?php echo $categoryid;?></td>
+							<td ><?php echo $category_id;?></td>
 							<td ><?php echo $category_name;?></td>
-							<td>
-								<a href="#"  data-target="#editProductModal" class="edit" data-toggle="modal" data-id='<?php echo $product_id; ?>' data-name="<?php echo $prod_name;?>" data-category="<?php echo $category?>" data-description="<?php echo $description?>" data-tech="<?php echo $tech?>" data-video="<?php echo $video?>" data-stock="<?php echo $stock?>" data-price="<?php echo $price;?>"><i class="material-icons" data-toggle="tooltip" title="Editar" >&#xE254;</i></a>
-								<a href="#deleteCategoryModal" class="delete" data-toggle="modal" data-id="<?php echo $categoryid;?>"><i class="material-icons" data-toggle="tooltip" title="Eliminar">&#xE872;</i></a>
+				    	<td>
+								<a href="#"  data-target="#editCategoryModal" class="edit" data-toggle="modal" data-id='<?php echo $category_id; ?>' data-name="<?php echo $category_name;?>"><i class="material-icons" data-toggle="tooltip" title="Editar" >&#xE254;</i></a>
+								<a href="#deleteCategoryModal" class="delete" data-toggle="modal" data-id="<?php echo $category_id;?>"><i class="material-icons" data-toggle="tooltip" title="Eliminar">&#xE872;</i></a>
                     		</td>
 						</tr>
 						<?php }?>
@@ -63,7 +66,7 @@ if($action == 'ajax'){
 							<td colspan='6'> 
 								<?php 
 									$inicios=$offset+1;
-									$finales+=$inicios;
+									$finales+=$inicios -1;
 									echo "Show $inicios a $finales of $numrows records";
 									echo paginate( $page, $total_pages, $adjacents);
 								?>
@@ -79,4 +82,3 @@ if($action == 'ajax'){
 	}	
 }
 ?>          
-

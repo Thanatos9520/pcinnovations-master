@@ -24,14 +24,14 @@
         <div class="col-lg-12">
 		<div class='col-sm-4 pull-right'>
 				<div id="custom-search-input">
-                            <div class="input-group col-md-12">
-                                <input type="text" class="form-control" placeholder="Buscar"  id="q" onkeyup="load(1);" />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-info" type="button" onclick="load(1);">
-                                        <span class="glyphicon glyphicon-search"></span>
-                                    </button>
-                                </span>
-                            </div>
+                    <div class="input-group col-md-12">
+                        <input type="text" class="form-control" placeholder="ID / Name" name="data" id="data" onkeyup="search(this.value,1)"/>
+                        <span class="input-group-btn">
+                            <button class="btn btn-info" onclick="load(1);">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
                 </div>
 			</div>
 			<div class='clearfix'></div>
@@ -44,16 +44,16 @@
 </div>
 </div>
 </div>
+
 <?php include('script.php'); ?>
 <?php include('modal.php'); ?>
-
+<?php include 'modal/modal_photo.php'?>
 <?php include("modal/modal_add.php");?>
 	<!-- Edit Modal HTML -->
 	<?php include("modal/modal_edit.php");?>
 	<!-- Delete Modal HTML -->
 	<?php include("modal/modal_delete.php");?>
-    <?php include("modal/modal_photo.php");?>
 <script src="js/services.js"></script>
-<script src="js/dropzone.js"></script>
+<script src="js/product2.js"></script>
 <script src="custom.js"></script>
 </body>
