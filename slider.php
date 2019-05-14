@@ -17,15 +17,13 @@
 	<div id="wowslider-container0">
 	<div class="ws_images"><ul>
 		<li><a href="#"><img src="data0/images/1080ti.jpg" alt="javascript photo gallery" title="GeForce gtx 1080ti" id="wows0_0"/></a></li>
-		<li><img src="data0/images/pc.jpg" alt="Kits" title="Kits" id="wows0_1"/></li>
-		<li><img src="data0/images/kit.jpg" alt="Kits" title="WHITE TIGER" id="wows0_1"/></li>
-		<li><img src="data0/images/Black-Conqueror2.jpg" alt="Kits" title="BLACK CONQUEROR" id="wows0_1"/></li>
+		<li><img src="data0/images/pcgamer.jpg" alt="Kits" title="PC GAMERS" id="wows0_1"/></li>
+		<li><img src="data0/images/pcgamer1.jpg" alt="Kits" title="PC GAMERS" id="wows0_1"/></li>
 	</ul></div>
 	<div class="ws_bullets"><div>
 		<a href="#" title="GeForce gtx 1080ti"><span><img src="data0/tooltips/1080ti.jpg" alt="GeForce gtx 1080ti"/>1</span></a>
-		<a href="#" title="Kits"><span><img src="data0/tooltips/pc.jpg" alt="Kits"/>2</span></a>
-		<a href="#" title="WHITE TIGER"><span><img src="data0/tooltips/kit.jpg" alt="Kits"/>2</span></a>
-		<a href="#" title="Conqueror"><span><img src="data0/tooltips/Black-Conqueror2.jpg" alt="Kits"/>2</span></a>
+		<a href="#" title="PC GAMERS"><span><img src="data0/tooltips/pcgamer.jpg" alt="Kits"/>2</span></a>
+		<a href="#" title="PC GAMERS"><span><img src="data0/tooltips/pcgamer1.jpg" alt="Kits"/>2</span></a>
 	</div></div>
 	<div class="ws_script" style="position:absolute;left:-99%"></div>
 	<div class="ws_shadow"></div>
