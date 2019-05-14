@@ -4,7 +4,7 @@
 	} elseif (!empty($_POST['edit_id'])){
 	require_once ("../../conn.php");//Contiene funcion que conecta a la base de datos
 	// escaping, additionally removing everything that could be (html/javascript-) code
-	$d=mysqli_real_escape_string($conn,(strip_tags($_POST["edit_id"],ENT_QUOTES)));
+	$id=mysqli_real_escape_string($conn,(strip_tags($_POST["edit_id"],ENT_QUOTES)));
 	$name = mysqli_real_escape_string($conn,(strip_tags($_POST["edit_name"],ENT_QUOTES)));
 	$category = mysqli_real_escape_string($conn,(strip_tags($_POST["edit_category"],ENT_QUOTES)));
 	$supplier = mysqli_real_escape_string($conn,(strip_tags($_POST["edit_supplier"],ENT_QUOTES)));
@@ -16,20 +16,18 @@
 	$fileInfo = PATHINFO($_FILES["image"]["name"]);
 
 	if (empty($_FILES["image"]["name"])){
-		$location=$prow['photo'];
+		$location="";
 	}
 	else{
 		if ($fileInfo['extension'] == "jpg" OR $fileInfo['extension'] == "png") {
-			$newFilename = $fileInfo['filename'] . "_" . time() . "." . $fileInfo['extension'];
+			$newFilename = $fileInfo['filename'] ."." . $fileInfo['extension'];
 			move_uploaded_file($_FILES["image"]["tmp_name"], "../upload/" . $newFilename);
 			$location = "upload/" . $newFilename;
 		}
 		else{
-			$location=$prow['photo'];
+			$location="";
 			?>
-				<script>
-					window.alert('Photo not updated. Please upload JPG or PNG photo only!');
-				</script>
+			
 			<?php
 		}
 	}

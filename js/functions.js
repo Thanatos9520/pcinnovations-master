@@ -66,5 +66,4 @@ jQuery(".msg-autoclose").click(function() {
 
 });
 
-
 });

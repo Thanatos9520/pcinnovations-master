@@ -1,58 +1,40 @@
-<?php include '../../conn.php' ?>
+<div class="modal fade" id="addphoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h3 class="modal-title" id="myModalLabel">Image Gallery</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                   
+                </div>
+                <div class="modal-body">
+				<div class="container-fluid">
+					<div class="message"></div>
+					<div style="height:10px;"></div>
+                    <form role="form" id="savePhotoProd" enctype="multipart/form-data">
+                            
+                        <div style="height:10px;"></div>
+                        <input type="hidden" name="idProd" id="idProd">
+                        <input type="hidden" name="getPhoto" value="0">					
+                        <div class="form-group input-group">
+                            <span class="input-group-addon" style="width:120px;">Photo:</span> 
+                            <input id="photo" type="file" style="width:400px;" class="form-control" name="archivo" accept="image/*" required />
+                        </div>
+                        
+                    <div class="container">
+                        <div class='d-flex flex-wrap p-4 images'> 
+                        
+                        </div>
+					</div>                     
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
+                        <button id="savePhoto" type="submit" class="btn btn-success"><i class="fa fa-check-square-o"></i> Add Photo</button>
+                    </div>
 
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-
-<script>
-     $(function(){
-        $("input[name='file']").on("change", function(){
-            var formData = new FormData($("#uploadimage")[0]);
-            var ruta = "../addphoto.php";
-            $.ajax({
-                url: ruta,
-                type: "POST",
-                data: formData,
-                contentType: false,
-                processData: false,
-                success: function(datos)
-                {
-                    swal(
-                  'Photo add!',
-                  '',
-                  'success'
-                    )
-                    $("#respuesta").html(datos);
-                }
-            });
-        });
-     });
-</script>
-
-<div id="addPhotoModal" class="modal fade">
-		<div class="modal-dialog">
-			<div class="modal-content">
-            <form id="uploadimage" action="" method="post" enctype="multipart/form-data">
-            <input type="file" name="file" id="file" required />
-            <input type="submit" value="Upload" class="submit" />
-            </form>
-            <div id="respuesta"></div>
-
-				<!-- <form name="add_photo" id="add_photo">
-					<div class="modal-header">						
-						<h4 class="modal-title">Add Photo</h4>
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					</div>
-					<div class="modal-body">					
-						<div class="form-group input-group">
-                            <span style="width:120px;" class="input-group-addon">Photo: (dimensions:400 x 400)</span>
-                            <input type="file" style="width:150px;" accept="*/*" class="form-control" name="image" id="image">
-						</div>
-					</div>
-					<div class="modal-footer">
-						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-						<input type="submit" class="btn btn-success" value="Guardar datos">
-					</div>
-				</form> -->
-			</div>
-		</div>
-	</div>
-
+                    </form>
+				</div>
+			
+				</div>
+                
+        </div>
+</div>
+</div>

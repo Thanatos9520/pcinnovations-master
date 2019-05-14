@@ -1,10 +1,11 @@
+<meta http-equiv=content-type content=text/html; charset=utf-8>
 <?php include '../../conn.php' ?>
 <div id="addCategoryModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<form name="add_category" id="add_category">
 					<div class="modal-header">						
-						<h4 class="modal-title">Add category</h4>
+						<h4 class="modal-title">Add Category</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body">					

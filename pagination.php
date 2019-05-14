@@ -23,7 +23,6 @@ function paginate($reload, $page, $tpages, $adjacents) {
 	if($page>($adjacents+2)) {
 		$out.= "<li><a>... </a></li>";
 	}
- 
 	// pages
  
 	$pmin = ($page>$adjacents) ? ($page-$adjacents) : 1;

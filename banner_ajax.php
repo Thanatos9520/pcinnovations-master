@@ -13,8 +13,7 @@ if($action == 'ajax'){
 			$error= "No se pudo eliminar los datos";
 		}
 	}
-	
-	
+
 	$tables="product";
 	$sWhere=" ";
 	$sWhere.=" ";
@@ -71,20 +70,7 @@ if($action == 'ajax'){
                     $price=$row['product_price'];
 				
 					?>
-					
-<!--
-					  <div class="col-sm-6 col-md-3">
-						<div class="thumbnail">
-						  <img src="¨POS/<?php echo $url_image;?>" alt="...">
-						  <div class="caption">
-							<h3><?php echo $titulo;?></h3>
 							
-							<p class='text-right'><a href="banneredit.php?id=<?php echo intval($id_slide);?>" class="btn btn-info" role="button"><i class='glyphicon glyphicon-edit'></i> Editar</a> <button type="button" class="btn btn-danger" onclick="eliminar_slide('<?php echo $id_slide;?>');" role="button"><i class='glyphicon glyphicon-trash'></i> Eliminar</button></p>
-						  </div>
-						</div>
-					  </div>
--->
-					
 					<div class="d-inline-flex p-4">
 
            <div class="ih-item square colored effect4" style="height:200px; ">
