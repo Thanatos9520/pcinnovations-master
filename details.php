@@ -20,7 +20,7 @@
 
    
     <link href="css/modern-business.css" rel="stylesheet">
-    <?php include('conn.php'); ?>
+    <?php include('POS/conn.php'); ?>
       
       <style>
  h4, p, li, h6, h1 {

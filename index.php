@@ -1,33 +1,45 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
   <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
       
+      <link href="vendor/bootstrap/css/footer.css" rel="stylesheet">
     <title>PCINNOVATIONS</title>
- 
+    <?php include './inc/link.php'; ?>
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/footer.css" rel="stylesheet">
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!--?php include './inc/link.php'; ?-->
+
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
     <link href="css/main2.css" rel="stylesheet">
     <link href="css/ihover.css" rel="stylesheet">
       <link href="css/resCarousel.css" rel="stylesheet" type="text/css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+      <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"
+  integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+  crossorigin="anonymous">
   
+
+
+   
+    
 </head>
-<body>
+
+
+  <body>
 	
 	<!-- End WOWSlider.com BODY section -->
 
-          <?php include './inc/nav.php'; ?> 
+	        <?php include './inc/nav.php'; ?> 
+      <div style="height: 15px;"></div>
 	        <?php include './slider.php'; ?> 
-
+       <div style="height: 20px;"></div>
+      
     <header>
   <div style="height: 70px;"></div>
  
@@ -36,10 +48,233 @@
     <!-- Page Content -->
      
     <hr>
-     
-
-<div class="contenedor scrollflow -pop -opacity">
+                               
+<!--
+                    <div class="container p8">
+          <div class="row">
+        <div class="col-lg-4">
+           <h1 style=" border-style: double; border-color:#1d1d7e; ">Tarjeta Madre</h1>
+        </div>
+        </div>
+        <div class="resCarousel" data-items="2-4-4-4" data-interval="2000" data-slide="1" data-animator="lazy">
+            <div class="resCarousel-inner">
         
+ <?php
+      include('conn.php');
+      $query=mysqli_query($conn,"select * from product where categoryid = 1 order by product_price");  
+    
+    		while($row=mysqli_fetch_array($query)){
+                
+             $id=$row['productid'];
+             $name=$row['product_name'];
+             $price=$row['product_price'];
+             $photo=$row['photo'];
+    			?>
+              
+               <div class="item">
+                    <div class="tile">
+                        <div>
+                           
+                            <div class="img" style="width:100%; height:100%;">
+                            <img style="width:80%; height:80%;" src="POS/<?php if (empty($photo)){echo " upload/noimage.jpg ";}else{echo $photo;} ?>" alt="img">
+                          </div>
+                        </div>
+                        <h5><?php echo $name; ?></h5>
+                        <hr>
+                        <p>₡ <?php echo $price; ?></p>
+                        <hr>
+                        <form action="details.php?id=<?php echo $id; ?>" method="post" name="Detalle">
+                                <input name="id_txt" type="hidden" value="<?php echo $id; ?>" />
+                                <input name="Detalles" type="submit" value="Detalles" class="btn btn-danger" style="width:95%;" />
+                              </form>
+                    </div>
+                </div>
+                 <?php
+            }
+          ?>
+
+            </div>
+            <button class='btn btn-default leftRs'><</button>
+            <button class='btn btn-default rightRs'>></button>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+     <div class="container p8 col-lg-6">
+          <div class="row">
+        <div class="col-lg-8">
+           <h1 style=" border-style: double; border-color:#1d1d7e; text-align: center; ">Tarjetas de video</h1>
+        </div>
+        </div>
+        <div class="resCarousel" data-items="2-4-4-4" data-interval="2000" data-slide="1" data-animator="lazy">
+            <div class="resCarousel-inner">
+           
+ <?php
+      include('conn.php');
+      $query=mysqli_query($conn,"select * from product where categoryid = 6 order by product_price desc");  
+    
+    		while($row=mysqli_fetch_array($query)){
+                
+             $id=$row['productid'];
+             $name=$row['product_name'];
+             $price=$row['product_price'];
+             $photo=$row['photo'];
+    			?>
+              
+               <div class="item">
+                    <div class="tile">
+                        <div>
+                           
+                            <div class="img" style="width:100%; height:100%;">
+                            <img style="width:80%; height:80%;" src="POS/<?php if (empty($photo)){echo " upload/noimage.jpg ";}else{echo $photo;} ?>" alt="img">
+                          </div>
+                        </div>
+                        <h5><?php echo $name; ?></h5>
+                       
+                        <p>₡ <?php echo $price; ?></p>
+                        
+                        <form action="details.php?id=<?php echo $id; ?>" method="post" name="Detalle">
+                                <input name="id_txt" type="hidden" value="<?php echo $id; ?>" />
+                                <input name="Detalles" type="submit" value="Detalles" class="btn btn-danger" style="width:95%;"/>
+                              </form>
+                    </div>
+                </div>
+                 <?php
+            }
+          ?>
+
+            </div>
+            <button class='btn btn-default leftRs'><</button>
+            <button class='btn btn-default rightRs'>></button>
+        </div>
+    </div>    
+     <div class="container p8 col-sm-6">
+          <div class="row">
+        <div class="col-lg-8">
+           <h1 style=" border-style: double; border-color:#1d1d7e; ">Headset Gaming</h1>
+        </div>
+        </div>
+        <div class="resCarousel" data-items="2-4-4-4" data-interval="2000" data-slide="1" data-animator="lazy">
+            <div class="resCarousel-inner">
+           
+ <?php
+      include('conn.php');
+      $query=mysqli_query($conn,"select * from product where categoryid = 19 order by product_price");  
+    
+    		while($row=mysqli_fetch_array($query)){
+                
+             $id=$row['productid'];
+             $name=$row['product_name'];
+             $price=$row['product_price'];
+             $photo=$row['photo'];
+    			?>
+              
+               <div class="item">
+                    <div class="tile">
+                        <div>
+                           
+                            <div class="img" style="width:100%; height:100%;">
+                            <img style="width:80%; height:80%;" src="POS/<?php if (empty($photo)){echo " upload/noimage.jpg ";}else{echo $photo;} ?>" alt="img">
+                          </div>
+                        </div>
+                        <h5><?php echo $name; ?></h5>
+                        
+                        <p>₡ <?php echo $price; ?></p>
+                       
+                        <form action="details.php?id=<?php echo $id; ?>" method="post" name="Detalle">
+                                <input name="id_txt" type="hidden" value="<?php echo $id; ?>" />
+                                <input name="Detalles" type="submit" value="Detalles" class="btn btn-danger" style="width:95%;"/>
+                              </form>
+                    </div>
+                </div>
+                 <?php
+            }
+          ?>
+
+            </div>
+            <button class='btn btn-default leftRs'><</button>
+            <button class='btn btn-default rightRs'>></button>
+        </div>
+    </div>   
+    </div>
+-->
+    
+                                
+                      <!-- end colored -->
+         
+     
+     <div class="container p8">
+          <div class="row">
+        <div class="col-lg-4">
+           <h1>Novedades</h1>
+        </div>
+        </div>
+        <div class="resCarousel" data-items="2-4-4-4" data-interval="2000" data-slide="1" data-animator="lazy">
+            <div class="resCarousel-inner">
+        
+ <?php
+      include('POS/conn.php');
+      $query=mysqli_query($conn,"select * from product ");  
+    
+    		while($row=mysqli_fetch_array($query)){
+                
+             $id=$row['productid'];
+             $name=$row['product_name'];
+             $price=$row['product_price'];
+             $photo=$row['photo'];
+    			?>
+              
+               <div class="item">
+                    <div class="tile">
+                        <div>
+                           
+                            <div class="img" style="width:100%; height:100%;">
+                            <img style="width:80%; height:80%;" src="POS/<?php if (empty($photo)){echo " upload/noimage.jpg ";}else{echo $photo;} ?>" alt="img">
+                          </div>
+                        </div>
+                        <h5><?php echo $name; ?></h5>
+                      
+                        <p>₡ <?php echo $price; ?></p>
+                        
+                        <form action="details.php?id=<?php echo $id; ?>" method="post" name="Detalle">
+                                <input name="id_txt" type="hidden" value="<?php echo $id; ?>" />
+                                <input name="Detalles" type="submit" value="Detalles" class="btn btn-danger" style="width:95%;" />
+                              </form>
+                    </div>
+                </div>
+                 <?php
+            }
+          ?>
+
+            </div>
+            <button class='btn btn-default leftRs'><</button>
+            <button class='btn btn-default rightRs'>></button>
+        </div>
+    </div>
+   
+      <hr>
+      
+
+      <div class="contenedor scrollflow -pop -opacity">
+
+<div class="post"> 
+    <div class="ih-item square colored effect6 from_top_and_bottom"><a href="products.php?cat=21">
+        <div class="img"><img src="img/Main/tablets.jpeg" style="height:185px;" alt="img"></div>
+        <div class="info">
+          <h3>Tablets</h3>
+        </div></a></div>
+  
+  </div>
+        
+<div class="post"> 
+    <div class="ih-item square colored effect6 from_top_and_bottom"><a href="products.php?cat=12">
+        <div class="img"><img src="img/Main/laptop.jpg" style="height:185px;" alt="img"></div>
+        <div class="info">
+          <h3>Laptop</h3>
+        </div></a></div>
+  
+  </div>
+          
 <div class="post">
 
     <div class="ih-item square colored effect6 from_top_and_bottom"><a href="products.php?cat=1">
@@ -99,6 +334,7 @@
   
   </div>
 
+
       </div>
 
       
@@ -137,7 +373,18 @@
             <hr>
         
        <div class="container">
+<!--
+        <div class="row">
 
+                <div style="height:60px;" ></div>
+        <div style="text-align:center" class="col-lg-12 scrollflow -pop -opacity">
+          <h2 >Nuestras Marcas</h2>
+          <h4 style="color:black">Nosotros representamos las mejores marcas</h4>
+          <h6>Nacional e internacional, nosotros manejamos las mejores marcass en el mercado para proveer un excelente servicio para nuestros clientes.</h6>
+       
+        </div>
+      </div>
+-->
        
       <hr>
 
@@ -147,7 +394,7 @@
           <p>Si buscar cotizar la computadora a tu medida o que te asesoremos para buscar los mejores componentes ponte en contacto con nosotros!</p>
         </div>
         <div class="col-md-4">
-          <a class="btn btn-lg btn-success btn-block animated infinite pulse" href="contact.php" style=" box-shadow: 1px 2px 5px #000000; ">Contactar!</a>
+          <a class="btn btn-lg btn-danger btn-block animated infinite pulse" href="contact.php" style=" box-shadow: 1px 2px 5px #000000; ">Contactar!</a>
         </div>
       </div>
  </div>
@@ -155,7 +402,14 @@
  
     <!-- Footer -->
       
+
       <?php include './inc/footer.php'; ?>  
+    
+ 
+      
+    <!-- Bootstrap core JavaScript -->  
+
+      
 
     <script src="js/resCarousel.js"></script>
     <script src="js/eskju.jquery.scrollflow.min.js"></script>
@@ -221,4 +475,5 @@
     </script>
 
   </body>
+
 </html

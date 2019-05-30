@@ -16,7 +16,7 @@
 <body>
     <?php 
         include './inc/nav.php';
-        require_once('conn.php');
+        require_once('POS/conn.php');
 
         $cat = intval($_GET['cat']); // resivimos la categoria de la url al presionar la categoria deseada, y solo seasn nums
         $sqlCat = "SELECT * FROM category WHERE categoryid = $cat";

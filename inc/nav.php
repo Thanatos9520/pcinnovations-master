@@ -115,7 +115,7 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">
-                    COMPUTADORAS
+                    EQUIPOS
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="products.php?cat=8">
@@ -132,6 +132,10 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="products.php?cat=12">
                          LAPTOPS
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="products.php?cat=21">
+                         TABLETS
                         </a>
                         <div class="dropdown-divider"></div>
                     </div>

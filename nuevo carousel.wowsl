@@ -10,16 +10,16 @@
             <Captions>true</Captions>
             <CaptionsEffect>parallax</CaptionsEffect>
             <Controls>true</Controls>
-            <FontSize>18</FontSize>
+            <FontSize>24</FontSize>
             <FullScreen>false</FullScreen>
             <GalleryName>nuevo carousel</GalleryName>
             <GallerySuffix>1</GallerySuffix>
             <HtmlCharset>UTF-8</HtmlCharset>
             <ImageAspectRatio>true</ImageAspectRatio>
-            <ImageEffect>carousel</ImageEffect>
+            <ImageEffect>stack</ImageEffect>
             <ImageFillColor>#000000</ImageFillColor>
-            <ImageHeight>500</ImageHeight>
-            <ImageQuality>90</ImageQuality>
+            <ImageHeight>700</ImageHeight>
+            <ImageQuality>100</ImageQuality>
             <ImageShrink2>false</ImageShrink2>
             <ImageStretch>true</ImageStretch>
             <ImageTemplate>C:/Program Files (x86)/WOW Slider/templates/backgnd/stream/</ImageTemplate>
@@ -31,7 +31,9 @@
             <OrderRandom>false</OrderRandom>
             <PlayPause>true</PlayPause>
             <Preloader>false</Preloader>
+            <PublishFileName>C:/Users/Thanatos/Documents/WOW Slider/wowslider.html</PublishFileName>
             <PublishIndex>wowslider.html</PublishIndex>
+            <PublishPath>C:/Users/Thanatos/Documents/WOW Slider</PublishPath>
             <PublishPreview>true</PublishPreview>
             <PublishType>file</PublishType>
             <RelativePath>false</RelativePath>
@@ -39,13 +41,13 @@
             <ShowControls>false</ShowControls>
             <ShowTooltips>1</ShowTooltips>
             <SizeStyle>2</SizeStyle>
-            <SlideshowDelay>20</SlideshowDelay>
+            <SlideshowDelay>37</SlideshowDelay>
             <SlideshowDuration>20</SlideshowDuration>
             <SoundEnable>0</SoundEnable>
             <SoundFileName></SoundFileName>
             <StopOnHover>false</StopOnHover>
             <SwipeSupport>2</SwipeSupport>
-            <TemplateColor>#ffffff</TemplateColor>
+            <TemplateColor>#e1e1e1</TemplateColor>
             <TemplateFont>PT Sans</TemplateFont>
             <TemplateName>stream</TemplateName>
             <ThumbAlign>bottom</ThumbAlign>
@@ -59,19 +61,19 @@
         </Settings>
         <Images RelativePath="false">
             <Image>
-                <url>C:/xampp/htdocs/pcinnovations-master/img/Carrusel/nuevas/FOTO-PARA-PORTADA.jpg</url>
-                <title>FOTO-PARA-PORTADA</title>
-                <filesize>480450</filesize>
+                <url>C:/xampp/htdocs/pcinnovations-master/img/Carrusel/new/familia-computadora-nueva-1024x682.jpg</url>
+                <title>La mejor tecnología para tu familia!</title>
+                <filesize>115740</filesize>
             </Image>
             <Image>
-                <url>C:/xampp/htdocs/pcinnovations-master/img/Carrusel/nuevas/geforce-rtx-2080-ti-gallery-c-2060x2060.jpg</url>
-                <title>geforce-rtx-2080-ti-gallery-c-2060x2060</title>
-                <filesize>182644</filesize>
+                <url>C:/xampp/htdocs/pcinnovations-master/img/Carrusel/new/familia-tablet-cama-13.jpg</url>
+                <title>Porque las Tablets se disfrutan en familia!</title>
+                <filesize>239211</filesize>
             </Image>
             <Image>
-                <url>C:/xampp/htdocs/pcinnovations-master/img/Banner_Productos/1080ti.jpg</url>
-                <title>1080ti</title>
-                <filesize>502410</filesize>
+                <url>C:/xampp/htdocs/pcinnovations-master/img/Carrusel/pc22.jpg</url>
+                <title>La mejor experiencia en Gaming</title>
+                <filesize>4784118</filesize>
             </Image>
         </Images>
     </Gallery>
