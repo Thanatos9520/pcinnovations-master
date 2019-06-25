@@ -1,4 +1,7 @@
 <?php
+    header('Content-Type: text/html; charset=ISO-8859-1');
+?>
+<?php
 	require_once ("../../conn.php");
 	
 	if (!empty($_POST['name']))
@@ -8,8 +11,8 @@
 		$category = mysqli_real_escape_string($conn,(strip_tags($_POST["category"],ENT_QUOTES)));
 		$price = floatval($_POST["price"]);
 		$supplier = mysqli_real_escape_string($conn,(strip_tags($_POST["supplier"],ENT_QUOTES)));  
-		$description = mysqli_real_escape_string($conn,(strip_tags($_POST["description"],ENT_QUOTES)));
-		$tech = mysqli_real_escape_string($conn,(strip_tags($_POST["tech"],ENT_QUOTES)));
+		$description = utf8_encode(mysqli_real_escape_string($conn,(strip_tags($_POST["description"],ENT_QUOTES))));
+		$tech = utf8_encode(mysqli_real_escape_string($conn,(strip_tags($_POST["tech"],ENT_QUOTES))));
 		$video = mysqli_real_escape_string($conn,(strip_tags($_POST["video"],ENT_QUOTES)));
 		$stock = intval($_POST["stock"]);
 		$fileInfo = PATHINFO($_FILES["images"]["name"]);

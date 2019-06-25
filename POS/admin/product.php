@@ -1,3 +1,6 @@
+<?php
+    header('Content-Type: text/html; charset=ISO-8859-1');
+?>
 <?php include('session.php'); ?>
 <?php include('header.php'); ?>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">

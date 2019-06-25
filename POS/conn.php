@@ -2,7 +2,7 @@
 
 $conn = mysqli_connect("localhost","root","","pcinnovations");
 
-if (!$conn) {
+if (!$conn->set_charset("utf8")) {
 	die("Connection failed: " . mysqli_connect_error());
 }
 mysqli_set_charset($conn, 'utf8' );

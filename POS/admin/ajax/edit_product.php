@@ -9,7 +9,7 @@
 	$category = mysqli_real_escape_string($conn,(strip_tags($_POST["edit_category"],ENT_QUOTES)));
 	$supplier = mysqli_real_escape_string($conn,(strip_tags($_POST["edit_supplier"],ENT_QUOTES)));
 	$price = floatval($_POST["edit_price"]);
-	$description = mysqli_real_escape_string($conn,(strip_tags($_POST["edit_description"],ENT_QUOTES)));
+	$description = utf8_encode(mysqli_real_escape_string($conn,(strip_tags($_POST["edit_description"],ENT_QUOTES))));
 	$tech = mysqli_real_escape_string($conn,(strip_tags($_POST["edit_tech"],ENT_QUOTES)));
 	$video = mysqli_real_escape_string($conn,(strip_tags($_POST["edit_video"],ENT_QUOTES)));
 	$stock = intval($_POST["edit_stock"]);
